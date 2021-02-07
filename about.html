@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>お問い合わせ - WAVE</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="post">
+    <header>
+      <a href="index.html">
+        WAVE
+      </a>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="about.html">サイトについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>お問い合わせ</h1>
+
+      <p>
+        ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。記事に関するご質問などもお気軽にお寄せください。
+      </p>
+
+      <form method="post" action="success.html" netlify="netlify">
+        <p>
+          <label>名前：</label>
+          <input type="text" name="name" required="required">
+        </p>
+        <p>
+          <label>メールアドレス：</label>
+          <input type="email" name="email" required="required">
+        </p>
+        <p>
+          <label>コメント：</label>
+          <textarea name="comment" required="required"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="送信">
+        </p>
+      </form>
+    </article>
+
+    <div>
+      <aside>
+        <figure>
+          <img src="images/profile.jpg" alt="WAVEの管理人">
+        </figure>
+        <p>
+          部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
+        </p>
+      </aside>
+
+      <aside>
+        <h2>PICKUP</h2>
+        <ul>
+          <li>
+            <a href="post02.html">
+              <figure>
+                <img src="images/plant.jpg" alt="">
+              </figure>
+              <h3>緑のアクセントならこれ</h3>
+            </a>
+          </li>
+          <li>
+            <a href="post03.html">
+              <figure>
+                <img src="images/items.jpg" alt="">
+              </figure>
+              <h3>小物と飾り棚の組み合わせ</h3>
+            </a>
+          </li>
+          <li>
+            <a href="post04.html">
+              <figure>
+                <img src="images/chair.jpg" alt="">
+              </figure>
+              <h3>居心地のいい部屋にあるもの</h3>
+            </a>
+          </li>
+          <li>
+            <a href="post05.html">
+              <figure>
+                <img src="images/tile.jpg" alt="">
+              </figure>
+              <h3>カラフルなタイル</h3>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>&copy; WAVE</footer>
+  </body>
+</html>
