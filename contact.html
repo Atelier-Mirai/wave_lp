@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="post">
@@ -25,31 +25,34 @@
     </nav>
 
     <article>
-      <h1>サイトについて</h1>
+      <h1>お問い合わせ</h1>
 
       <p>
-        綺麗なインテリアや可愛い文房具など、日常の中で見つけたお気に入りのものを纏めているサイトです。
+        ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。記事に関するご質問などもお気軽にお寄せください。
       </p>
 
-      <table>
-        <tr>
-          <th>サイト名</th>
-          <td>WAVE</td>
-        </tr>
-        <tr>
-          <th>開設日</th>
-          <td>四月一日</td>
-        </tr>
-        <tr>
-          <th>運営方針</th>
-          <td>ときどきまったり更新中。最新記事の一覧はトップページに掲載しています。</td>
-        </tr>
-      </table>
-
+      <form method="post" action="success.html" netlify="netlify">
+        <p>
+          <label>名前：</label>
+          <input type="text" name="name" required="required">
+        </p>
+        <p>
+          <label>メールアドレス：</label>
+          <input type="email" name="email" required="required">
+        </p>
+        <p>
+          <label>コメント：</label>
+          <textarea name="comment" required="required"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="送信">
+        </p>
+      </form>
     </article>
 
     <div>
       <aside>
+        <h2>PROFILE</h2>
         <figure>
           <img src="images/profile.jpg" alt="WAVEの管理人">
         </figure>
@@ -61,6 +64,14 @@
       <aside>
         <h2>PICKUP</h2>
         <ul>
+          <li>
+            <a href="post01.html">
+              <figure>
+                <img src="images/note.jpg" alt="">
+              </figure>
+              <h3>スケッチが楽しくなるノート</h3>
+            </a>
+          </li>
           <li>
             <a href="post02.html">
               <figure>
