@@ -23,11 +23,12 @@ body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-              [head]   100px
-              [title]  auto
-              [sub]    auto
-              [recent] auto
-              [foot]   100px;
+              [head]    100px
+              [title]   auto
+              [sub]     auto
+              [recent]  auto
+              [gallery] auto
+              [foot]    100px;
   row-gap: 20px;
 
   /* font-family: sans-serif; */
@@ -48,6 +49,13 @@ header {
   color: #555d6b;
   text-shadow: 5px 5px 5px gray;
   margin-top: -20px;
+}
+
+header img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  vertical-align: bottom;
 }
 
 header a {
@@ -180,6 +188,16 @@ figure.hero img {
 .top section h3::after {
   content: "▲";
   color: deepskyblue;
+}
+
+/* 写真展 */
+.top section.gallery {
+  grid-row: gallery;
+}
+
+.top section.gallery h2,
+.top section.gallery p {
+  grid-column: 1 / -1;
 }
 
 /* フッター */
@@ -387,6 +405,7 @@ input[type="submit"] {
                         [head]      100px
                         [title sub] auto
                         [recent]    auto
+                        [gallery]   auto
                         [foot]      100px;
   }
 

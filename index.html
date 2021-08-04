@@ -24,15 +24,17 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
 
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+    <link rel="stylesheet" href="magnific-popup-custom.css">
+
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body class="top">
     <header>
-      <a href="index.html">
-        WAVE
-      </a>
+      <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
     </header>
 
     <nav>
@@ -55,7 +57,7 @@
 
     <p>
       <img src="images/circle.svg" alt=""><br>
-      <a href="#">空間を彩る多彩なアイテム</a>
+      <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>
     </p>
 
     <section>
@@ -102,6 +104,42 @@
       </article>
     </section>
 
+    <section class="gallery">
+      <h2>写真展</h2>
+      <p>動物園に行ってきました。いろいろな動物に会えました。</p>
+
+      <div class="grid-auto-fita">
+        <a href="images/tora.jpg" title="大きな虎です">
+          <img src="images/tora.jpg">
+        </a>
+        <a href="images/tsuru.jpg" title="鶴です">
+          <img src="images/tsuru_s.jpg">
+        </a>
+        <a href="images/zou.jpg" title="象さん 象さん お鼻が長いのね">
+          <img src="images/zou_s.jpg">
+        </a>
+        <a href="images/saru.jpg" title="お猿さんです">
+          <img src="images/saru_s.jpg">
+        </a>
+        <a href="images/hakucho.jpg" title="白鳥の湖">
+          <img src="images/hakucho_s.jpg">
+        </a>
+        <a href="images/araiguma.jpg" title="洗熊です">
+          <img src="images/araiguma_s.jpg">
+        </a>
+        <a href="images/kuma.jpg" title="熊さんです">
+          <img src="images/kuma_s.jpg">
+        </a>
+      </div>
+    </section>
+
     <footer>&copy; WAVE</footer>
+
+    <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="magnific-popup-custom.js"></script>
   </body>
 </html>
