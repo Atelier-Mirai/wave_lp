@@ -4,7 +4,6 @@
 
 /* テキストの自動拡大を無効化 */
 body {
-  .webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
 
