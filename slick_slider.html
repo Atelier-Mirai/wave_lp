@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- slick-carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+
+  <link rel="stylesheet" href="grid_slider.css">
+</head>
+<body>
+  <h1 class="title">Grid Of Sliders</h1>
+
+  <!-- Grid Of Sliders -->
+  <!-- https://codepen.io/jackharner/pen/gyyeEd -->
+  <section class="services-grid">
+    <section class="slider-wrapper">
+      <h1>Service Category 1</h1>
+
+      <div class="slider">
+        <div class="card">
+          <img src="images/sea_01.jpg" alt="">
+          <h2>空飛ぶ鷗</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_02.jpg" alt="">
+          <h2>砂浜に打ち寄せる波</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_03.jpg" alt="">
+          <h2>透明な南の海</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_04.jpg" alt="">
+          <h2>夜明け前</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_05.jpg" alt="">
+          <h2>断崖にて</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_06.jpg" alt="">
+          <h2>眼下を望む</h2>
+        </div>
+
+        <div class="card">
+          <img src="images/sea_07.jpg" alt="">
+          <h2>幾星霜に耐えた老松</h2>
+        </div>
+      </div>
+
+    </section>
+
+  </section>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+<script>
+  $(".slider").slick({
+    slidesToShow: 3,         // 画面に見せるスライドの枚数
+    slidesToScroll: 3,       // 1回のスクロールで移動するスライドの枚数
+  	dots: true,              // 画面下部に案内用ドット（点）を表示
+  	arrows: true,            // 左右の矢印表示
+  	autoplay: false,         // 自動再生
+  	autoplaySpeed: 2000,     // 自動再生速度(ms)
+  	rows: 1,                 // スライド表示に用いる行数
+  	pauseOnHover: true,      // ホバー時に停止するか否か
+    responsive: [            // レスポンシブ対応
+      {
+        breakpoint: 768,     // 端末の横幅が768px以下の見せ方
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 428,     // 端末の横幅が428px以下の見せ方
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+.services-grid {
+  display: grid;
+  /* grid-template-columns: repeat(3, auto); */
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  gap: 1em;
+}
+
+.slider_wrapper {
+  grid-column: 2;
+  max-width: 90%;
+  /* 左右の矢印表示のために、100%より少し小さめに */
+  min-width: 0px;
+  justify-self: center;
+}
+
+.card {
+  color: black;
+  text-align: center;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  min-width: 0px;
+}
+
+.card img {
+  max-width: 90%; /* 一枚の写真の幅を設定 */
+  padding-top: 0.5em;
+}
+
+.title {
+  font-size: 4em;
+  text-align: center;
+  margin: 0.25em;
+}
+
+/* 戻る矢印、次へ矢印 */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 42%;
+  cursor: pointer;
+  border-top:   2px solid #666;
+  border-right: 2px solid #666;
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: "";
+}

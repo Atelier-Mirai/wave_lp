@@ -1,5 +1,5 @@
 /* 画像の大きさを指定 */
-.gallery div {
+.zoo div {
   /* 横一杯に使う */
   grid-column: 1 / -1;
 
@@ -11,14 +11,14 @@
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
 
-.gallery div a img {
+.zoo div a img {
   vertical-align: bottom;
 }
 
 /* 写真をクリックしたときに、ズームアップする為の設定 */
 .mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: all 0.3s ease-out;
 }
 

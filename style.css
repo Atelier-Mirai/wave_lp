@@ -2,12 +2,13 @@
   モバイル版・デスクトップ版 共通
 =============================================================================*/
 
-/* テキストの自動拡大を無効化 */
+/*-----------------------------------------------------------------------------
+  基本設定
+-----------------------------------------------------------------------------*/
 body {
+  /* テキストの自動拡大を無効化 */
   text-size-adjust: none;
 }
-
-/* 基本設定 */
 
 * {
   margin: 0;
@@ -18,20 +19,22 @@ img {
   height: auto;
 }
 
-/* ページ全体の設定 */
+/*-----------------------------------------------------------------------------
+  ページ全体の設定
+-----------------------------------------------------------------------------*/
 body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-              [head]    100px
-              [title]   auto
-              [sub]     auto
-              [recent]  auto
-              [gallery] auto
-              [foot]    100px;
+              [head]   100px
+              [title]  auto
+              [sub]    auto
+              [recent] auto
+              [zoo]    auto
+              [sea]    auto
+              [foot]   100px;
   row-gap: 20px;
 
-  /* font-family: sans-serif; */
   font-family: 'Hachi Maru Pop', cursive;
 }
 
@@ -40,7 +43,9 @@ body > * {
   grid-column: 2 / -2;
 }
 
-/* ヘッダー */
+/*-----------------------------------------------------------------------------
+  ヘッダー
+-----------------------------------------------------------------------------*/
 header {
   grid-row: head;
   justify-self: center;
@@ -49,21 +54,34 @@ header {
   color: #555d6b;
   text-shadow: 5px 5px 5px gray;
   margin-top: -20px;
+
+  /* ロゴと文字を並べる */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 58px;
 }
 
 header img {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
   width: 40px;
   height: 40px;
   margin-right: 5px;
-  vertical-align: bottom;
+  /* vertical-align: bottom; */
 }
 
 header a {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
   color: inherit;
   text-decoration: none;
 }
 
-/* ナビゲーションメニュー */
+/*-----------------------------------------------------------------------------
+  ナビゲーションメニュー
+-----------------------------------------------------------------------------*/
 nav {
   grid-row: head;
   justify-self: center;
@@ -92,7 +110,9 @@ nav ul li a:hover {
   color: orange;
 }
 
-/* ヒーローイメージ */
+/*-----------------------------------------------------------------------------
+  ヒーローイメージ
+-----------------------------------------------------------------------------*/
 figure.hero {
   grid-column: 1 / -1;
   grid-row: title / span 2;
@@ -107,7 +127,9 @@ figure.hero img {
   position: relative; /* Z-index 用の hack */
 }
 
-/* タイトル */
+/*-----------------------------------------------------------------------------
+  タイトル
+-----------------------------------------------------------------------------*/
 .top h1 {
   grid-row: title;
   justify-self: center;
@@ -119,7 +141,9 @@ figure.hero img {
   text-align: center;
 }
 
-/* サブタイトル */
+/*-----------------------------------------------------------------------------
+  サブタイトル
+-----------------------------------------------------------------------------*/
 .top p {
   grid-row: sub;
   text-align: center;
@@ -144,8 +168,10 @@ figure.hero img {
   background: orange;
 }
 
-/* 記事一覧 */
-.top section {
+/*-----------------------------------------------------------------------------
+  記事一覧(最近の投稿)
+-----------------------------------------------------------------------------*/
+.top section.recent {
   grid-row: recent;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -159,48 +185,75 @@ figure.hero img {
   gap: 20px 10px;
 }
 
-.top section h2 {
+.top section.recent h2,
+.top section.recent p {
   grid-column: 1 / -1;
   text-align: center;
   font-weight: normal;
 }
 
-.top section a,
-.post aside a {
+.top section.recent a,
+.post aside.recent a {
   color: black;
   text-decoration: none;
 }
 
-.top section h3,
+.top section.recent h3,
 .post aside h3 {
   font-size: 14px;
 }
 
-.top section a:hover {
+.top section.recent a:hover {
   text-decoration: underline;
 }
 
-.top section h3::before {
+.top section.recent h3::before {
   content: "▼";
   color: gold;
 }
 
-.top section h3::after {
+.top section.recent h3::after {
   content: "▲";
   color: deepskyblue;
 }
 
-/* 写真展 */
-.top section.gallery {
-  grid-row: gallery;
+/*-----------------------------------------------------------------------------
+  動物園の写真
+-----------------------------------------------------------------------------*/
+section.zoo {
+  grid-row: zoo;
 }
 
-.top section.gallery h2,
-.top section.gallery p {
-  grid-column: 1 / -1;
+section.zoo h2,
+section.zoo p {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 1rem;
 }
 
-/* フッター */
+
+/*-----------------------------------------------------------------------------
+  海の写真
+-----------------------------------------------------------------------------*/
+section.sea {
+  grid-row: sea;
+  display: grid;
+}
+
+section.sea h2,
+section.sea p {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+section.sea h3 {
+  font-size: 16px;
+}
+
+/*-----------------------------------------------------------------------------
+  フッター
+-----------------------------------------------------------------------------*/
 footer {
   grid-row: foot;
   justify-self: center;
@@ -208,7 +261,6 @@ footer {
   font-size: 13px;
 }
 
-/* フッターのバー */
 body::after {
   content: "";
   background: lightgray;
@@ -217,7 +269,9 @@ body::after {
   z-index: -1;
 }
 
-/* 記事ページ全体の設定 */
+/*-----------------------------------------------------------------------------
+  記事ページの設定
+-----------------------------------------------------------------------------*/
 .post {
   grid-template-rows:
                       [head] 100px
@@ -289,7 +343,9 @@ aside ul {
   padding: 0;
 }
 
-/* サイトについて */
+/*-----------------------------------------------------------------------------
+  サイトについて
+-----------------------------------------------------------------------------*/
 table {
   border-collapse: collapse;
 }
@@ -321,7 +377,9 @@ tr:nth-child(even) th { background: #00ba13; color: white; }
 tr:nth-child(odd)  td { background: #bfcdf5; color: black; }
 tr:nth-child(even) td { background: #4470ec; color: white; }
 
-/* 地図 */
+/*-----------------------------------------------------------------------------
+  地図
+-----------------------------------------------------------------------------*/
 .map {
   box-sizing: border-box;
   width: 100%;
@@ -349,7 +407,9 @@ tr:nth-child(even) td { background: #4470ec; color: white; }
   height: 100%;
 }
 
-/* YouTube */
+/*-----------------------------------------------------------------------------
+  YouTube
+-----------------------------------------------------------------------------*/
 .video {
   box-sizing: border-box;
   width: 100%;
@@ -369,7 +429,9 @@ tr:nth-child(even) td { background: #4470ec; color: white; }
   height: 100%;
 }
 
-/* お問い合わせフォーム */
+/*-----------------------------------------------------------------------------
+  お問い合わせフォーム
+-----------------------------------------------------------------------------*/
 form p {
   margin-bottom: 20px;
 }
@@ -405,7 +467,8 @@ input[type="submit"] {
                         [head]      100px
                         [title sub] auto
                         [recent]    auto
-                        [gallery]   auto
+                        [zoo]       auto
+                        [sea]       auto
                         [foot]      100px;
   }
 
@@ -443,7 +506,7 @@ input[type="submit"] {
     align-self: center;
   }
 
-  .top section {
+  .top section.recent {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
   }

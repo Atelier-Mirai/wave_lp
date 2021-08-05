@@ -1,4 +1,4 @@
-$(".gallery").each(function () {
+$(".zoo div").each(function () {
   $(this).magnificPopup({
     /* 基本設定いろいろ */
     delegate: "a",

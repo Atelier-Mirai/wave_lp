@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
     <link rel="stylesheet" href="magnific-popup-custom.css">
 
+    <!-- slick-carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="slick-custom.css">
+
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="style.css">
   </head>
@@ -60,7 +65,7 @@
       <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>
     </p>
 
-    <section>
+    <section class="recent">
       <h2>最近の投稿</h2>
       <article>
         <a href="post01.html">
@@ -104,11 +109,11 @@
       </article>
     </section>
 
-    <section class="gallery">
-      <h2>写真展</h2>
+    <section class="zoo">
+      <h2>動物園の思い出</h2>
       <p>動物園に行ってきました。いろいろな動物に会えました。</p>
 
-      <div class="grid-auto-fita">
+      <div>
         <a href="images/tora.jpg" title="大きな虎です">
           <img src="images/tora.jpg">
         </a>
@@ -133,6 +138,46 @@
       </div>
     </section>
 
+    <!-- Grid Of Sliders -->
+    <!-- https://codepen.io/jackharner/pen/gyyeEd -->
+    <section class="sea">
+      <div class="slider-wrapper">
+        <h2>海の思い出</h2>
+        <p>海に行ってきました。波の音はとっても心落ち着きます。</p>
+
+        <div class="slider">
+          <div class="card">
+            <img src="images/sea_01.jpg" alt="">
+            <h3>空飛ぶ鷗</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_02.jpg" alt="">
+            <h3>砂浜に打ち寄せる波</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_03.jpg" alt="">
+            <h3>透明な南の海</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_04.jpg" alt="">
+            <h3>夜明け前</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_05.jpg" alt="">
+            <h3>断崖にて</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_06.jpg" alt="">
+            <h3>眼下を望む</h3>
+          </div>
+          <div class="card">
+            <img src="images/sea_07.jpg" alt="">
+            <h3>幾星霜に耐えた老松</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>&copy; WAVE</footer>
 
     <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
@@ -141,5 +186,9 @@
     <!-- Magnific Popup -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="magnific-popup-custom.js"></script>
+    <!-- Slick -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="slick-custom.js"></script>
+
   </body>
 </html>
