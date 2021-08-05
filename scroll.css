@@ -1,0 +1,49 @@
+/* スクロールを促す
+-----------------------------------------------------------------------------*/
+/* 表示位置 */
+.scrolldown {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  height: 50px;
+}
+
+/* Scrollという文字表示の設定 */
+.scrolldown span {
+  position: absolute;
+  left: -35px;
+  top:  -25px;
+  color: var(--sakurairo);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の表示 */
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 30px;
+  background: var(--sakurairo);
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+/* 高さ・位置・透過度が変化して、線が上から下に動く */
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}

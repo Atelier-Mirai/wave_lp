@@ -8,7 +8,7 @@
   grid-gap: 10px;
   /* grid-auto-fill */
   /* https://www.webprofessional.jp/difference-between-auto-fill-and-auto-fit/ */
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 .zoo div a img {

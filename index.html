@@ -33,7 +33,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <link rel="stylesheet" href="slick-custom.css">
 
+    <!-- Vegas - Fullscreen Backgrounds and Slideshows. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
+    <link rel="stylesheet" href="vegas-custom.css">
+
     <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="scroll.css">
+    <link rel="stylesheet" href="page_top.css">
+    <link rel="stylesheet" href="text-glow.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
@@ -54,13 +63,26 @@
       </ul>
     </nav>
 
+    <div class="vegas_wrapper">
+      <div id="vegas_slider">
+        <h1 class="glowAnime">Best place to visit in the world</h1>
+        <!-- <p><a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a></p> -->
+        <a href="https://github.com/Atelier-Mirai/wave-html" class="btn btn-gradient">
+          <span>ソースコードはこちら</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- スクロールを促す -->
+    <div class="scrolldown">
+      <span>Scroll</span>
+    </div>
+
     <figure class="hero">
       <img src="images/room.jpg" alt="快適な室内空間">
     </figure>
-
     <h1>Best place to visit in the world</h1>
-
-    <p>
+    <p class="subtitle">
       <img src="images/circle.svg" alt=""><br>
       <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>
     </p>
@@ -147,38 +169,46 @@
 
         <div class="slider">
           <div class="card">
-            <img src="images/sea_01.jpg" alt="">
+            <img src="images/sea01.jpg" alt="">
             <h3>空飛ぶ鷗</h3>
           </div>
           <div class="card">
-            <img src="images/sea_02.jpg" alt="">
+            <img src="images/sea02.jpg" alt="">
             <h3>砂浜に打ち寄せる波</h3>
           </div>
           <div class="card">
-            <img src="images/sea_03.jpg" alt="">
+            <img src="images/sea03.jpg" alt="">
             <h3>透明な南の海</h3>
           </div>
           <div class="card">
-            <img src="images/sea_04.jpg" alt="">
+            <img src="images/sea04.jpg" alt="">
             <h3>夜明け前</h3>
           </div>
           <div class="card">
-            <img src="images/sea_05.jpg" alt="">
+            <img src="images/sea05.jpg" alt="">
             <h3>断崖にて</h3>
           </div>
           <div class="card">
-            <img src="images/sea_06.jpg" alt="">
+            <img src="images/sea06.jpg" alt="">
             <h3>眼下を望む</h3>
           </div>
           <div class="card">
-            <img src="images/sea_07.jpg" alt="">
+            <img src="images/sea07.jpg" alt="">
             <h3>幾星霜に耐えた老松</h3>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>&copy; WAVE</footer>
+    <footer>
+      <!-- ページの先頭にスムーズスクロール p412-p417-->
+      <p id="page-top">
+        <a href="#" class="btn btn-solid-gold">
+          <i class="fas fa-angle-double-up fa-lg fa-fw"></i>Page Top
+        </a>
+      </p>
+      &copy; WAVE
+    </footer>
 
     <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
     <!-- jQuery -->
@@ -189,6 +219,12 @@
     <!-- Slick -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="slick-custom.js"></script>
-
+    <!-- Vegas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
+    <script src="vegas-custom.js"></script>
+    <!-- page top -->
+    <script src="page_top.js"></script>
+    <!-- text glow -->
+    <script src="text-glow.js"></script>
   </body>
 </html>

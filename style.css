@@ -26,6 +26,7 @@ body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
+              [vegas]  100vh
               [head]   100px
               [title]  auto
               [sub]    auto
@@ -41,6 +42,11 @@ body {
 /* パーツの配置 */
 body > * {
   grid-column: 2 / -2;
+}
+
+.vegas_wrapper {
+  grid-row: vegas;
+  grid-column: 1 / -1;
 }
 
 /*-----------------------------------------------------------------------------
@@ -144,16 +150,16 @@ figure.hero img {
 /*-----------------------------------------------------------------------------
   サブタイトル
 -----------------------------------------------------------------------------*/
-.top p {
+.top p.subtitle {
   grid-row: sub;
   text-align: center;
 }
 
-.top p img {
+.top p.subtitle img {
   width: 240px;
 }
 
-.top p a {
+.top p.subtitle a {
   text-decoration: none;
   color: white;
   border: solid 1px white;
@@ -164,7 +170,7 @@ figure.hero img {
   background: rgba(139, 167, 232, 0.67);
 }
 
-.top p a:hover {
+.top p.subtitle a:hover {
   background: orange;
 }
 
@@ -510,6 +516,7 @@ p.annotation {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
     column-gap: 5%;
     grid-template-rows:
+                        [vegas]     100vh
                         [head]      100px
                         [title sub] auto
                         [recent]    auto
