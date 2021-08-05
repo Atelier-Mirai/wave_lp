@@ -53,7 +53,7 @@
         記事に関するご質問などもお気軽にお寄せください。
       </p>
 
-      <form method="post" action="success.html" netlify="netlify">
+      <!-- <form method="post" action="success.html" netlify="netlify">
         <p>
           <label>名前：</label>
           <input type="text" name="name" required="required">
@@ -69,7 +69,45 @@
         <p>
           <input type="submit" value="送信">
         </p>
+      </form> -->
+
+      <form action="/success" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <label class="hidden" for="subject">件名</label>
+        <input id="subject" name="subject" type="hidden" value="Webサイトから「お問い合わせ」がありました。">
+
+        <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
+        <input id="referrer_url" name="referrer_url" type="hidden" value="">
+        <script>
+          document.getElementById("referrer_url").value = document.referrer;
+        </script>
+
+        <p class="hidden">
+          <label>Don’t fill this out if you're human:
+            <input name="bot-field">
+          </label>
+        </p>
+        <p>
+          <textarea autocapitalize="none" autocorrect="off" id="message" name="message" placeholder="とっても為になりました。ありがとうございます。" required=""></textarea>
+          <label class="name" for="message">お問い合わせ内容</label>
+        </p>
+        <p>
+          <input autocomplete="name" class="input" id="name" name="name" placeholder="山田 太郎" required="" type="text">
+          <label class="name" for="name">お名前</label>
+        </p>
+        <p>
+          <input autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="" type="email">
+          <label class="name" for="email">メールアドレス</label>
+        </p>
+        <p>
+          <input autocomplete="tel" class="input" id="tel" maxlength="13" minlength="7" name="tel" pattern="^(\d)*$" placeholder="0523734649" type="tel">
+          <label class="name" for="tel">電話番号</label>
+        </p>
+        <p class="annotation"><span class="required">※</span> は、必須項目です。</p>
+        <input type="submit" name="" value="送信">
       </form>
+
+
     </article>
 
     <div>
