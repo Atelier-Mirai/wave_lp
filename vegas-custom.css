@@ -8,13 +8,7 @@
   height: 100vh; /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
 
-.vegas_wrapper {
-  position: relative;
-  /* width: 100vw;
-  height: 100vh; */
-}
-
-.vegas_wrapper h1 {
+#vegas_slider h1 {
   position: absolute;
   z-index: 2;
   top: 40%;
@@ -25,16 +19,24 @@
   letter-spacing: 0.2em;
   text-transform: uppercase; /* (小文字でも)大文字に変換する */
   color: white;
+  width: 80%;
 }
 
-.vegas_wrapper a {
+@media(min-width: 768px) {
+  #vegas_slider h1 {
+    font-size: 48px; /* 大画面で大きく成りすぎるのを防ぐ */
+  }
+}
+
+#vegas_slider a {
+  grid-column: 2 / 4;
   position: absolute;
   z-index: 2;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 3vw; /* 6vw は、幅の 6% という単位指定 */
+  /* font-size: 3vw; */
   letter-spacing: 0.1em;
   text-transform: uppercase; /* (小文字でも)大文字に変換する */
   color: white;

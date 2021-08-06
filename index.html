@@ -44,12 +44,13 @@
     <link rel="stylesheet" href="page_top.css">
     <link rel="stylesheet" href="text-glow.css">
     <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="utility.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body class="top">
     <header>
-      <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
+      <!-- <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a> -->
 
       <nav>
         <ul id="global_nav">
@@ -64,6 +65,21 @@
       </nav>
     </header>
 
+    <!-- ヘッダー p170-p182 -->
+    <header id="header" class="hidden">
+      <!-- 企業ロゴ -->
+      <h1>ZAHAエアコン</h1>
+      <!-- ナビゲーションメニュー -->
+      <nav>
+        <ul id="global_nav">
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="about.html">エアコン・取り外し</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="access.html">アクセス</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <!-- ハンバーガーメニュー -->
     <div class="open_button">
       <!-- CSS で spanタグをハンバーガーの線に変える -->
@@ -72,15 +88,24 @@
       <span></span>
     </div>
 
-    <div class="vegas_wrapper">
+    <!-- ハンバーガーメニュー -->
+    <div class="open_button">
+      <!-- CSS で spanタグをハンバーガーの線に変える -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
       <div id="vegas_slider">
         <h1 class="glowAnime">Best place to visit in the world</h1>
         <!-- <p><a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a></p> -->
         <a href="https://github.com/Atelier-Mirai/wave-html" class="btn btn-gradient">
-          <span>ソースコードはこちら</span>
+          <span>
+            ソースコードは<br class="mobile only">
+            こちら
+          </span>
         </a>
       </div>
-    </div>
 
     <!-- スクロールを促す -->
     <div class="scrolldown">
@@ -90,7 +115,7 @@
     <figure class="hero">
       <img src="images/room.jpg" alt="快適な室内空間">
     </figure>
-    <h1>Best place to visit in the world</h1>
+    <h1 class="title">Best place to visit in the world</h1>
     <p class="subtitle">
       <img src="images/circle.svg" alt=""><br>
       <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>

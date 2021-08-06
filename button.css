@@ -1,13 +1,29 @@
+/* レスポンシブな文字サイズ */
+/* 今すぐ使える CSS レシピブック より */
+.btn {
+  font-size: 16px;
+}
+
+@media (min-width:320px) {
+  .btn {
+    font-size: calc((24 - 16) * ((100vw - 320px) / (960 - 320)) + 16px);
+  }
+}
+
+@media (min-width: 960px) {
+  .btn {
+    font-size: 24px;
+  }
+}
+
 /* CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説！ */
 /* https://jajaaan.co.jp/css/button/ */
-
 .btn {
-  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.5;
   position: relative;
   display: inline-block;
-  padding: 1rem 4rem;
+  padding: 0.8rem 1.2rem;
   cursor: pointer;
   user-select: none;
   transition: all 0.3s;
@@ -33,7 +49,6 @@ a.btn-gradient:hover:after {
 }
 
 a.btn-gradient {
-  font-size: 2rem;
   color: #fff;
   border-radius: 100vh;
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
