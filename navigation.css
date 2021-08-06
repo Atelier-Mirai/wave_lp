@@ -1,0 +1,234 @@
+/* ヘッダーを上部に固定させるためのCSS
+-----------------------------------------------------------------------------*/
+#header {
+  /* ヘッダー位置を上部に固定するためのCSS */
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  z-index: 999;
+
+  /* ヘッダーレイアウト用CSS */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ivory;
+  color: var(--utsushiiro);
+  text-align: center;
+  padding: 20px;
+}
+
+#header.fixed {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+/* ナビゲーションメニュー
+-----------------------------------------------------------------------------*/
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--amairo);
+  padding: 10px;
+}
+
+/* ふわっと出現させるためのCSS
+-----------------------------------------------------------------------------*/
+#header.upward {
+  position: fixed;
+  width: 100%;
+  animation: upwardAnimation 0.5s forwards;
+}
+
+/* ヘッダーが画面上部に上がって消えていく動き */
+@keyframes upwardAnimation {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+#header.downward {
+  position: fixed;
+  width: 100%;
+  animation: downwardAnimation 0.5s forwards;
+}
+
+/* ヘッダーが画面上部から下に現れてくる動き */
+@keyframes downwardAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ヘッダーの表示、非表示のためのCSS
+-----------------------------------------------------------------------------*/
+#header.hidden {
+  display: none;
+}
+
+#header.shown {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  /* 一瞬 ヘッダーの黄色が見えるので、色を同じにして、ごまかす */
+  #header {
+    background-color: var(--sakurairo);
+    color: var(--sakurairo);
+  }
+}
+
+/* ハンガーバーメニューのためのCSS
+-----------------------------------------------------------------------------*/
+/* ボタン全体の形のためのCSS */
+.open_button {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  background: var(--nibiiro);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+/* 個々の線のためのCSS */
+.open_button span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--sakurairo);
+  width: 45%;
+}
+
+.open_button span:nth-of-type(1) {
+  top: 15px;
+}
+.open_button span:nth-of-type(2) {
+  top: 23px;
+}
+.open_button span:nth-of-type(3) {
+  top: 31px;
+}
+
+/* activeクラスを付与した後の設定 */
+.open_button.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.open_button.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.open_button.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* ボタンの出現アニメーション */
+.fadeDown {
+  animation-name: fadeDownAnimation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  display: block;
+}
+
+@keyframes fadeDownAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* done クラス付与なら、透過させて非表示に */
+#header.done {
+  opacity: 0; /* 非表示 */
+}
+
+/* メニューボタンクリックで、panel_activeクラス付与 */
+#header.done.panel_active {
+  opacity: 1; /* 出現 */
+}
+
+#header.done.panel_active nav {
+  opacity: 1;
+  z-index: 3; /* 前面に */
+  background: var(--nibiiro);
+}
+
+#header nav ul li a:hover,
+#header.done.panel_active nav ul li a:hover {
+  color: var(--utsushiiro);
+}
+
+/* メニューパネルの形状 */
+#header.done nav {
+  /* 固定位置にして最背面に */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* 全画面表示 */
+  width: 100%;
+  height: 100%;
+  /* 天地中央 ＆ テキスト中央揃え */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* 始めは透過 0 に */
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+#header.done.panel_active nav {
+  opacity: 1;
+  z-index: 3;
+  background: var(--sakurairo);
+}
+
+/* メニューを縦並びに */
+#header.done.panel_active nav ul {
+  display: block;
+}
+
+/* メニューパネルの形状 */
+#header.done.panel_active nav li a {
+  color: var(--amairo);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  transition: all 0.3s;
+}

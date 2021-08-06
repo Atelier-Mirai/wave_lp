@@ -1,18 +1,19 @@
 /* スクロールを促す
 -----------------------------------------------------------------------------*/
+.scrolldown {
+  grid-row: vegas;
+  justify-self: center;
+  align-self: end;
+  padding-bottom: 60px;
+}
+
 /* 表示位置 */
 .scrolldown {
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  height: 50px;
+  position: relative;
 }
 
 /* Scrollという文字表示の設定 */
 .scrolldown span {
-  position: absolute;
-  left: -35px;
-  top:  -25px;
   color: var(--sakurairo);
   font-size: 1rem;
   letter-spacing: 0.05em;
@@ -22,7 +23,8 @@
 .scrolldown::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: 220px;
+  left: 35px;
   width: 2px;
   height: 30px;
   background: var(--sakurairo);
@@ -34,7 +36,7 @@
 @keyframes pathmove {
   0% {
     height: 0;
-    top: 0;
+    top: 25px;
     opacity: 0;
   }
   30% {
@@ -43,7 +45,7 @@
   }
   100% {
     height: 0;
-    top: 50px;
+    top: 60px;
     opacity: 0;
   }
 }

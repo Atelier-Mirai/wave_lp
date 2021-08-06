@@ -43,25 +43,34 @@
     <link rel="stylesheet" href="scroll.css">
     <link rel="stylesheet" href="page_top.css">
     <link rel="stylesheet" href="text-glow.css">
+    <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body class="top">
     <header>
       <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
+
+      <nav>
+        <ul id="global_nav">
+          <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+          <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+          <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+          <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
+          </li>
+          <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
+          <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-      <ul>
-        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
-        <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
-        </li>
-        <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-        <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
-      </ul>
-    </nav>
+    <!-- ハンバーガーメニュー -->
+    <div class="open_button">
+      <!-- CSS で spanタグをハンバーガーの線に変える -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <div class="vegas_wrapper">
       <div id="vegas_slider">
@@ -226,5 +235,7 @@
     <script src="page_top.js"></script>
     <!-- text glow -->
     <script src="text-glow.js"></script>
+    <!-- navigation -->
+    <script src="navigation.js"></script>
   </body>
 </html>
