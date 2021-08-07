@@ -1,48 +1,72 @@
+/*=============================================================================
+  デスクトップ用メニューのためのCSS
+=============================================================================*/
+
 /* ヘッダーを上部に固定させるためのCSS
 -----------------------------------------------------------------------------*/
-#header {
+#desktop-header {
   /* ヘッダー位置を上部に固定するためのCSS */
   position: fixed;
-  height: 70px;
-  width: 100%;
-  z-index: 999;
-
-  /* ヘッダーレイアウト用CSS */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ivory;
-  color: var(--utsushiiro);
-  text-align: center;
-  padding: 20px;
-}
-
-#header.fixed {
-  position: fixed;
-  z-index: 999;
   top: 0;
   left: 0;
+  height: 70px;
+  z-index: 999;
+  width: 100vw;
+
+  /* ヘッダーレイアウト用CSS */
+  background: var(--sakurairo);
+  font-size: 40px;
+  color: #555d6b;
+  text-shadow: 5px 5px 5px gray;
+
+  /* ロゴと文字を並べる */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 58px;
 }
 
-/* ナビゲーションメニュー
------------------------------------------------------------------------------*/
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+#desktop-header div.logo {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  padding-left: 5vw;
 }
 
-nav ul li a {
-  text-decoration: none;
+#desktop-header div.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+#desktop-header div.logo a {
   color: var(--amairo);
-  padding: 10px;
+  text-decoration: none;
 }
+
+#desktop-header div.logo a:hover {
+  color: var(--utsushiiro);
+}
+
+#desktop-header nav {
+  grid-column: 2;
+  grid-row: 1;
+  padding-right: 5vw;
+}
+
+#desktop-header nav li a {
+  text-decoration: none;
+}
+
+#desktop-header nav li a i {
+  margin-right: 3px;
+}
+
 
 /* ふわっと出現させるためのCSS
 -----------------------------------------------------------------------------*/
-#header.upward {
+#desktop-header.upward {
   position: fixed;
-  width: 100%;
   animation: upwardAnimation 0.5s forwards;
 }
 
@@ -58,9 +82,8 @@ nav ul li a {
   }
 }
 
-#header.downward {
+#desktop-header.downward {
   position: fixed;
-  width: 100%;
   animation: downwardAnimation 0.5s forwards;
 }
 
@@ -79,24 +102,21 @@ nav ul li a {
 
 /* ヘッダーの表示、非表示のためのCSS
 -----------------------------------------------------------------------------*/
-#header.hidden {
+#desktop-header.hidden {
+  display: none;
+}
+#mobile-header.hidden {
   display: none;
 }
 
-#header.shown {
-  display: flex;
+.shown {
+  display: grid;
 }
 
-@media (max-width: 767px) {
-  /* 一瞬 ヘッダーの黄色が見えるので、色を同じにして、ごまかす */
-  #header {
-    background-color: var(--sakurairo);
-    color: var(--sakurairo);
-  }
-}
+/*=============================================================================
+  モバイル用メニューのためのCSS
+=============================================================================*/
 
-/* ハンガーバーメニューのためのCSS
------------------------------------------------------------------------------*/
 /* ボタン全体の形のためのCSS */
 .open_button {
   display: none;
@@ -170,65 +190,42 @@ nav ul li a {
   }
 }
 
-/* done クラス付与なら、透過させて非表示に */
-#header.done {
-  opacity: 0; /* 非表示 */
-}
-
-/* メニューボタンクリックで、panel_activeクラス付与 */
-#header.done.panel_active {
-  opacity: 1; /* 出現 */
-}
-
-#header.done.panel_active nav {
-  opacity: 1;
-  z-index: 3; /* 前面に */
-  background: var(--nibiiro);
-}
-
-#header nav ul li a:hover,
-#header.done.panel_active nav ul li a:hover {
-  color: var(--utsushiiro);
-}
-
-/* メニューパネルの形状 */
-#header.done nav {
-  /* 固定位置にして最背面に */
+#mobile-menu.active {
+  /* 固定位置にして全画面表示 */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-  /* 全画面表示 */
   width: 100%;
   height: 100%;
-  /* 天地中央 ＆ テキスト中央揃え */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* 始めは透過 0 に */
-  opacity: 0;
+  /* Page Top を 2000 にしているのでそれより前面に */
+  z-index: 3000;
+
+  /* 余韻を残して切り替わるように */
   transition: all 0.4s;
-}
 
-#header.done.panel_active nav {
-  opacity: 1;
-  z-index: 3;
+  /* 背景色の設定など */
   background: var(--sakurairo);
+  display: grid;
+  grid-template-rows: 4rem 4rem 4rem;
+  grid-auto-flow: row;
+  justify-content: center;
 }
 
-/* メニューを縦並びに */
-#header.done.panel_active nav ul {
-  display: block;
+#mobile-menu.active li a:first-child {
+  margin-top: 4rem;
 }
 
-/* メニューパネルの形状 */
-#header.done.panel_active nav li a {
-  color: var(--amairo);
-  text-decoration: none;
-  padding: 10px;
-  display: block;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-  transition: all 0.3s;
+#mobile-menu.active li a {
+  font-size: 18px;
+  letter-spacing: 0.3rem;
+  color: var(--shinonomeiro);
+}
+
+#mobile-menu.active li a {
+  text-shadow: 2px 2px var(--nanohanairo);
+}
+
+#mobile-menu.active li a i {
+  font-size: 20px;
+  color: var(--kyohiiro);
 }

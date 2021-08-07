@@ -23,13 +23,11 @@ img {
   ページ全体の設定
 -----------------------------------------------------------------------------*/
 body {
-  /* width: 100vw; */
-
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
               [vegas]  100vh
-              [head]   100px
+              /* [head]   100px */
               [title]  auto
               [sub]    auto
               [recent] auto
@@ -37,7 +35,6 @@ body {
               [sea]    auto
               [foot]   100px;
   row-gap: 20px;
-
   font-family: 'Hachi Maru Pop', cursive;
 }
 
@@ -49,7 +46,7 @@ body > * {
 /*-----------------------------------------------------------------------------
   ヘッダー
 -----------------------------------------------------------------------------*/
-header {
+.post header {
   grid-row: head;
   justify-self: center;
   align-self: center;
@@ -64,7 +61,7 @@ header {
   grid-template-rows: 58px;
 }
 
-header img {
+.post header img {
   grid-column: 1;
   grid-row: 1;
   align-self: end;
@@ -74,7 +71,7 @@ header img {
   /* vertical-align: bottom; */
 }
 
-header a {
+.post header a {
   grid-column: 2;
   grid-row: 1;
   align-self: start;
@@ -519,7 +516,7 @@ p.annotation {
     column-gap: 5%;
     grid-template-rows:
                         [vegas]     100vh
-                        [head]      100px
+                        /* [head]      100px */
                         [title sub] auto
                         [recent]    auto
                         [zoo]       auto

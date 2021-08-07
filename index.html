@@ -49,11 +49,13 @@
   </head>
 
   <body class="top">
-    <header>
-      <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
-
+    <!-- デスクトップ用ナビゲーションメニュー -->
+    <header id="desktop-header" class="hidden">
+      <div class="logo">
+        <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
+      </div>
       <nav>
-        <ul id="global_nav">
+        <ul>
           <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
           <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
           <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
@@ -67,6 +69,13 @@
 
     <!-- モバイル専用ナビゲーションメニュー -->
     <header id="mobile-header" class="hidden">
+      <!-- ハンバーガーメニュー -->
+      <div class="open_button">
+        <!-- CSS で spanタグをハンバーガーの線に変える -->
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <!-- ナビゲーションメニュー -->
       <nav>
         <ul id="mobile-menu">
@@ -76,14 +85,6 @@
           <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
         </ul>
       </nav>
-
-      <!-- ハンバーガーメニュー -->
-      <div class="open_button">
-        <!-- CSS で spanタグをハンバーガーの線に変える -->
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </header>
 
       <div id="vegas_slider">
@@ -99,14 +100,14 @@
       <span>Scroll</span>
     </div>
 
-    <figure class="hero">
+    <!-- <figure class="hero">
       <img src="images/room.jpg" alt="快適な室内空間">
     </figure>
     <h1 class="title">Best place to visit in the world</h1>
     <p class="subtitle">
       <img src="images/circle.svg" alt=""><br>
       <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>
-    </p>
+    </p> -->
 
     <section class="recent">
       <h2>最近の投稿</h2>
