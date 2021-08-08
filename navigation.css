@@ -30,6 +30,7 @@
   grid-row: 1;
   justify-self: start;
   padding-left: 5vw;
+  width: 240px;
 }
 
 #desktop-header div.logo img {
@@ -56,6 +57,7 @@
 
 #desktop-header nav li a {
   text-decoration: none;
+  min-width: 64px;
 }
 
 #desktop-header nav li a i {
