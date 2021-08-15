@@ -1,4 +1,4 @@
-$('#vegas_slider').vegas({
+$('#vegas-slider').vegas({
   overlay: true,
   transition: 'blur',
   transitionDuration: 2000,

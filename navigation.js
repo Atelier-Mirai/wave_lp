@@ -1,7 +1,7 @@
 // アニメーション関数(デスクトップ用)を定義する
 const fixedAnimationForDesktop = () => {
   // スクロール量を取得
-  let scroll       = $(window).scrollTop();
+  let scroll = $(window).scrollTop();
 
   // 300px以上、スクロールしたら
   if (scroll >= 300) {
@@ -26,17 +26,17 @@ const fixedAnimationForDesktop = () => {
 // アニメーション関数（モバイル用）を定義する
 const fixedAnimationForMobile = () => {
   // スクロール量を取得
-  let scroll       = $(window).scrollTop();
+  let scroll = $(window).scrollTop();
 
   // 300px以上、スクロールしたら
   if (scroll >= 300) {
     $("#mobile-header").removeClass("hidden");
-    $(".open_button").addClass("fadeDown");
+    $(".open-button").addClass("appearance");
   }
   // そうでなければ
   else {
     $("#mobile-header").addClass("hidden");
-    $(".open_button").removeClass("fadeDown");
+    $(".open-button").removeClass("appearance");
   }
 }
 
@@ -48,15 +48,15 @@ if (windowWidth <= 768) {
   // モバイル版のメニュー表示
   $(window).scroll(fixedAnimationForMobile);
   // ハンバーガーボタンをクリックした際の処理
-  $(".open_button").on("click", () => {
-    $(".open_button").toggleClass("active");
+  $(".open-button").on("click", () => {
+    $(".open-button").toggleClass("active");
     $("#mobile-menu").toggleClass("active");
   });
   // リンクをクリックした際の処理
   $("#mobile-menu li a").on("click", () => {
-    $(".open_button").removeClass("active");
+    $(".open-button").removeClass("active");
     $("#mobile-menu").removeClass("active");
-    $(".open_button").removeClass("fadeDown");
+    $(".open-button").removeClass("appearance");
   });
 } else {
   // デスクトップ版のメニュー表示

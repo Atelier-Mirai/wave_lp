@@ -1,0 +1,40 @@
+/* 戻るボタンを右下に固定*/
+#page-top {
+  position: fixed;
+  right: 10px;
+  bottom:10px;
+  z-index: 2000;
+  /*はじめは非表示*/
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+/* 上に上がる動き */
+#page-top.upward {
+  animation: upward-animation 0.5s forwards;
+}
+@keyframes upward-animation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 下に下がる動き */
+#page-top.downward {
+  animation: downward-animation 0.5s forwards;
+}
+@keyframes downward-animation {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100px);
+  }
+}

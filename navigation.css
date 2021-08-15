@@ -101,7 +101,6 @@
   }
 }
 
-
 /* ヘッダーの表示、非表示のためのCSS
 -----------------------------------------------------------------------------*/
 #desktop-header.hidden {
@@ -110,7 +109,6 @@
 #mobile-header.hidden {
   display: none;
 }
-
 .shown {
   display: grid;
 }
@@ -120,7 +118,7 @@
 =============================================================================*/
 
 /* ボタン全体の形のためのCSS */
-.open_button {
+.open-button {
   display: none;
   position: fixed;
   top: 10px;
@@ -134,7 +132,7 @@
 }
 
 /* 個々の線のためのCSS */
-.open_button span {
+.open-button span {
   display: inline-block;
   transition: all .4s;
   position: absolute;
@@ -145,27 +143,27 @@
   width: 45%;
 }
 
-.open_button span:nth-of-type(1) {
+.open-button span:nth-of-type(1) {
   top: 15px;
 }
-.open_button span:nth-of-type(2) {
+.open-button span:nth-of-type(2) {
   top: 23px;
 }
-.open_button span:nth-of-type(3) {
+.open-button span:nth-of-type(3) {
   top: 31px;
 }
 
 /* activeクラスを付与した後の設定 */
-.open_button.active span:nth-of-type(1) {
+.open-button.active span:nth-of-type(1) {
   top: 18px;
   left: 18px;
   transform: translateY(6px) rotate(-45deg);
   width: 30%;
 }
-.open_button.active span:nth-of-type(2) {
+.open-button.active span:nth-of-type(2) {
   opacity: 0;
 }
-.open_button.active span:nth-of-type(3) {
+.open-button.active span:nth-of-type(3) {
   top: 30px;
   left: 18px;
   transform: translateY(-6px) rotate(45deg);
@@ -173,15 +171,15 @@
 }
 
 /* ボタンの出現アニメーション */
-.fadeDown {
-  animation-name: fadeDownAnimation;
+.appearance {
+  animation-name: appearance-animation;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   opacity: 0;
   display: block;
 }
 
-@keyframes fadeDownAnimation {
+@keyframes appearance-animation {
   from {
     opacity: 0;
     transform: translateY(-100px);

@@ -1,6 +1,6 @@
 /* スクロールを促す
 -----------------------------------------------------------------------------*/
-.scrolldown {
+.scroll.down {
   grid-row: vegas;
   justify-self: center;
   align-self: end;
@@ -8,19 +8,19 @@
 }
 
 /* 表示位置 */
-.scrolldown {
+.scroll.down {
   position: relative;
 }
 
 /* Scrollという文字表示の設定 */
-.scrolldown span {
+.scroll.down span {
   color: var(--sakurairo);
   font-size: 1rem;
   letter-spacing: 0.05em;
 }
 
 /* 線の表示 */
-.scrolldown::after {
+.scroll.down::after {
   content: "";
   position: absolute;
   top: 220px;

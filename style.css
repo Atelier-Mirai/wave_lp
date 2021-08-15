@@ -113,7 +113,7 @@ nav ul li a:hover {
 /*-----------------------------------------------------------------------------
   ヒーローイメージ
 -----------------------------------------------------------------------------*/
-#vegas_slider {
+#vegas-slider {
   grid-row: vegas;
   grid-column: 1 / -1;
 }
@@ -437,6 +437,10 @@ tr:nth-child(even) td { background: #4470ec; color: white; }
 /*-----------------------------------------------------------------------------
   お問い合わせフォーム
 -----------------------------------------------------------------------------*/
+form {
+  padding-top: 30px;
+}
+
 form p {
   margin-bottom: 20px;
 }
@@ -446,7 +450,8 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  font-size: 16px; /* iOS では 16px 未満だと自動拡大される */
+  /* iOS では 16px 未満だと自動拡大されるので */
+  font-size: 16px;
   font-family: 'Hachi Maru Pop', cursive;
 }
 
@@ -492,10 +497,6 @@ form label.name {
 
 form textarea[required] ~ label.name {
   transform: translateY(-154px) scale(1);
-}
-
-form {
-  padding-top: 30px;
 }
 
 p.annotation {
