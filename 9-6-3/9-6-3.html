@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modaal 練習</title>
+  <meta name="description" content="Javascript と、jQuery ライブラリ Modaal の練習">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+  <link rel="stylesheet" href="css/9-6-3.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+
+</head>
+
+<body>
+  <header id="header">
+    <h1>Logo</h1>
+  </header>
+
+  <main>
+    <ul class="info-list">
+      <li>
+        <a href="#info-1" class="info">
+          <dl>
+            <dt>2019.5.12</dt>
+            <dd>お知らせ1のタイトル</dd>
+          </dl>
+        </a>
+      </li>
+      <li>
+        <a href="#info-2" class="info">
+          <dl>
+            <dt>2019.5.12</dt>
+            <dd>お知らせ2のタイトル</dd>
+          </dl>
+        </a>
+      </li>
+    </ul>
+
+    <section id="info-1" class="hidden">
+      <h2>お知らせ1</h2>
+      <p>おしらせの内容が入ります。</p>
+    </section>
+
+    <section id="info-2" class="hidden">
+      <h2>お知らせ2</h2>
+      <p>おしらせの内容が入ります。</p>
+    </section>
+
+    <!--確認を促すモーダル-->
+    <p>
+      <a href="#login" class="confirm">
+        確認画面モーダルリンク
+      </a>
+    </p>
+    <section id="login" class="hidden"></section>
+
+    <!--画像のモーダル-->
+    <ul class="gallery-list">
+      <!--data-groupに同じ名前を入れるとグループ化されて表示-->
+      <li>
+        <a href="images/01.jpg" class="gallery" data-group="gallery">
+          <img src="images/01.jpg" alt="" width="100">
+        </a>
+      </li>
+      <li>
+        <a href="images/01.jpg" class="gallery" data-group="gallery">
+          <img src="images/01.jpg" alt="" width="100">
+        </a>
+      </li>
+      <li>
+        <a href="images/01.jpg" class="gallery" data-group="gallery">
+          <img src="images/01.jpg" alt="" width="100">
+        </a>
+      </li>
+    </ul>
+
+    <!--動画のモーダル-->
+    <p>
+      <a href="https://www.youtube.com/embed/Kq95zgCrxeY" class="video-open">
+        videoを開く
+      </a>
+    </p>
+
+    <!--iframeのモーダル-->
+    <p>
+      <a href="https://kubotaryoko.com" class="iframe-open">
+        iframeで指定のリンク先を開く
+      </a>
+    </p>
+
+    <hr>
+
+    <a href="#inline" class="inline">Inline</a>
+    <div id="inline" style="display:none;">
+    	Inline content goes here...
+    </div>
+    <script>
+      $(".inline").modaal();
+    </script>
+
+    <a href="#fullscreen" class="fullscreen">Fullscreen</a>
+    <div id="fullscreen" style="display:none;">
+    	fullscreen Inline content goes here...
+    </div>
+    <script>
+      $(".fullscreen").modaal({
+        fullscreen: true
+      });
+    </script>
+
+    <a href="images/01.jpg" class="image" data-modaal-desc="My Description">
+      image
+    </a>
+
+    <script>
+      $('.image').modaal({
+        type: 'image'
+      });
+    </script>
+
+    <a href="images/01.jpg" data-group="gallery" class="gallery" data-modaal-desc="My Description 01">gallery</a>
+    <a href="images/02.jpg" data-group="gallery" class="gallery" data-modaal-desc="My Description 02">gallery</a>
+    <a href="images/03.jpg" data-group="gallery" class="gallery" data-modaal-desc="My Description 03">gallery</a>
+    <script>
+      $('.gallery').modaal({
+        type: 'image'
+      });
+    </script>
+
+    <a href="https://www.youtube.com/embed/cBJyo0tgLnw" class="youtube">YouTube</a>
+    <script>
+      $('.youtube').modaal({
+      	type: 'video'
+      });
+    </script>
+
+    <a href="https://player.vimeo.com/video/109626219" class="vimeo">vimeo</a>
+    <script>
+      $('.vimeo').modaal({
+      	type: 'video'
+      });
+    </script>
+
+    <a href="http://humaan.com" class="iframe">iframe</a>
+    <script>
+      $('.iframe').modaal({
+      	type: 'iframe',
+      	width: 700,
+      	height: 500
+      });
+    </script>
+
+    <a href="#" class="confirm">confirm</a>
+    <script>
+      $('.confirm').modaal({
+        type: 'confirm',
+        confirm_button_text: 'Confirm',
+        confirm_cancel_button_text: 'Cancel',
+        confirm_title: 'Confirm Action XYZ',
+        confirm_content: '<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>',
+        confirm_callback: () => {
+            alert('you have confirmed this action');
+        },
+        confirm_cancel_callback: () => {
+          alert('you have cancelled this action');
+        }
+      });
+    </script>
+
+    <a href="#ig" class="modaal" data-modaal-type="instagram" data-modaal-instagram-id="BAGj2JqHFV6">Show</a>
+    <script>
+      $('#ig').modaal({
+        type: 'instagram';
+      });
+    </script>
+  </main>
+
+
+  <footer id="footer">
+    <small>&copy; copyright.</small>
+  </footer>
+
+  <script src="js/9-6-3.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/*=============================================================================
+  コピペでできる！CSSとhtmlのみで作る「続きを読む」の開閉ボタン
+  https://copypet.jp/502/
+=============================================================================*/
+.readmore-box {
+  position: relative;
+}
+
+.readmore-box label {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  height: 140px; /* グラデーションの高さ */
+  cursor: pointer;
+  text-align: center;
+  /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+  background: linear-gradient(to bottom, rgba(254, 244, 244, 0) 0%, rgba(254, 244, 244, 0.95) 100%);
+}
+
+.readmore-box input:checked + label {
+  background: inherit; /* 開いた時にグラデーションを消す */
+}
+
+.readmore-box label::after {
+  line-height: 2.5rem;
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 50%;
+  width: 16rem;
+  font-family: "Font Awesome 5 Free";
+  content: "\f13a  続きをよむ";
+  font-weight: bold;
+  transform: translate(-50%, 0);
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+
+  /* https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/1-6/1-6.html#Flower */
+  /* グラデーション ボタン */
+  border-color: transparent;
+  color: var(--sakurairo);
+  background: linear-gradient(270deg,#3bade3 0%, #9844b7 50%, #44ea76 100%);
+  background-size: 200% auto;
+  background-position: right center;
+  box-shadow: 0 5px 10px rgba(250, 108, 159, 0.4);
+}
+
+.readmore-box input {
+  display: none;
+}
+
+.readmore-box .readmore-container {
+  overflow: hidden;
+  height: 250px; /* 開く前に見えている部分の高さ */
+  transition: all 0.5s;
+}
+
+.readmore-box input:checked + label {
+  /* display: none ; 閉じるボタンを消す場合解放 */
+}
+
+.readmore-box input:checked + label:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f139  閉じる";
+  font-weight: bold;
+}
+
+.readmore-box input:checked ~ .readmore-container {
+  height: auto;
+  padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+  transition: all 0.5s;
+}

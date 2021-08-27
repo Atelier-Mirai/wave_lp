@@ -1,0 +1,12 @@
+/*=============================================================================
+  個々のCSSを読み込む
+=============================================================================*/
+@import "colors.css";
+@import "shapes.css";
+@import "body.css";
+@import "header.css";
+@import "main.css";
+@import "submenu.css";
+@import "footer.css";
+@import "readmore.css";
+@import "tabular.css";

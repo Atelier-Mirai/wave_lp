@@ -1,0 +1,48 @@
+/*=============================================================================
+  図形に切り抜くためのCSS
+=============================================================================*/
+
+/* 円形にする */
+.circular {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/* 三角形に切り抜く */
+/* https://webparts.cman.jp/img/clip/ */
+.triangle {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+/* 正方形に切り取る */
+.square {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* 菱形になるように回転する */
+.rhombus {
+  width: calc(120px * 0.707);
+  height: calc(120px * 0.707);
+  transform: rotate(45deg);
+  margin: 1rem;
+}
+
+/* 菱形に切り抜く */
+.diamond {
+  width: 120px;
+  height: 120px;
+  clip-path: polygon(50% 0, 15% 50%, 50% 100%, 85% 50%);
+}
+
+/* ハート型に切り抜く */
+/* https://developer.mozilla.org/ja/docs/Web/CSS/clip-path */
+.heart {
+  width: 140px;
+  height: 130px;
+  clip-path: path('M15,45 A30,30,0,0,1,75,45 A30,30,0,0,1,135,45 Q135,90,75,130 Q15,90,15,45 Z')
+}

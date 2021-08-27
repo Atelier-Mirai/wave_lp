@@ -1,0 +1,23 @@
+/*=============================================================================
+  モバイル版・デスクトップ版 共通の設定
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  フッター
+-----------------------------------------------------------------------------*/
+.footer {
+  grid-row: foot;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+  width: 100%;
+  height: 100%;
+  background: var(--nanohanairo);
+  font-family: 'Hachi Maru Pop', cursive;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

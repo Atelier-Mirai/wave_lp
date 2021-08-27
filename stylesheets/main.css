@@ -1,0 +1,71 @@
+/*=============================================================================
+  メイン記事のためのスタイルシート
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  モバイル版・デスクトップ版 共通の設定
+-----------------------------------------------------------------------------*/
+.main {
+  grid-row: main;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+
+.main article h1 {
+  text-align: center;
+  text-shadow: 3px 3px 3px var(--nibiiro);
+  font-family: 'Hachi Maru Pop', cursive;
+  margin-top: 0;
+}
+
+.main article > * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.main article p {
+  line-height: 2;
+  text-indent: 1em;
+  margin-bottom: 1em;
+}
+
+.main article p::first-letter {
+  color: var(--sanaeiro);
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.main article figcaption {
+  font-size: smaller;
+  text-align: right;
+}
+
+/* 記事の区切り線 */
+body::after {
+  content: "";
+  background: var(--nibiiro);
+  height: 2px;
+  grid-column: 1 / -1;
+  grid-row: head;
+  align-self: end;
+}
+
+/* 時計アイコン */
+.fa-clock {
+  color: var(--shinonomeiro);
+}
+
+/*-----------------------------------------------------------------------------
+  デスクトップ版
+-----------------------------------------------------------------------------*/
+@media (min-width: 768px) {
+  .main article h1 {
+    font-size: 36px;
+  }
+
+  .main article p {
+    font-size: 18px;
+  }
+}
