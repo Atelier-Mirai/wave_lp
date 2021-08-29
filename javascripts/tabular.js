@@ -1,37 +1,35 @@
 // 任意のタブにURLからリンクするための関数
-function getHashID (hashIDName){
-  if(hashIDName){
-    // タブ設定
-    $('.tab.menu li').find('a').each(function() { // タブ内のaタグ全てを取得
-      let idName = $(this).attr('href'); // タブ内のaタグのリンク名（例）#lunchの値を取得
-      if(idName === hashIDName){ // リンク元の指定されたURLのハッシュタグ
-                                 // http:// example.com/#lunch←この#の値とタブ内のリンク名（例）#lunchが同じかをチェック
-        let parentElm = $(this).parent(); // タブ内のaタグの親要素（li）を取得
-        $('.tab.menu li').removeClass("active"); // タブ内のliについているactiveクラスを取り除き
-        $(parentElm).addClass("active"); // リンク元の指定されたURLのハッシュタグとタブ内のリンク名が同じであれば、liにactiveクラスを追加
-        // 表示させるエリア設定
-        $(".tab.segument").removeClass("active"); // もともとついているis-activeクラスを取り除き
-        $(hashIDName).addClass("active"); // 表示させたいエリアのタブリンク名をクリックしたら、表示エリアにis-activeクラスを追加
-        console.log(hashIDName);
-      }
-    });
-  }
+const showSegumentByHashLink = (locationHashLink) => {
+  if (!locationHashLink) { return false; } // 引数が与えられないときは戻る。
+
+  // タブ設定
+  $('.tab.menu li').find('a').each(function() { // タブ内のaタグ全てを取得
+    let id = $(this).attr('href');              // aタグのhref属性値を取得
+                                                // (=表示させたいタブセグメントのID)
+
+    // もしaタグのhref属性が、リンク元の指定されたURLのハッシュリンクと等しければ、
+    if(id === locationHashLink){
+      let containingElement = $(this).parent(); // タブ内のaタグの親要素liを取得
+      $('.tab.menu li').removeClass("active");  // タブ内のliに付与された
+                                                // activeクラスを取り除く
+      $(containingElement).addClass("active");  // liにactiveクラスを付与
+      $(".tab.segument").removeClass("active"); // タブセグメントのactiveクラスを取り除く
+      $(locationHashLink).addClass("active");   // activeクラスを付与
+    }
+  });
 }
 
-// タブをクリックしたら
+// タブをクリックした際に、以下が実行される。
 $('.tab.menu a').on('click', function() {
-  let idName = $(this).attr('href'); // タブ内のリンク名を取得
-  let tabName = $(this).data('tab');
-  console.log(tabName);
-  getHashID (idName);// 設定したタブの読み込みと
-  return false;// aタグを無効にする
+  let id  = $(this).attr('href'); // リンクのhref属性を取得
+                                  // (=表示させたいタブセグメントのID)
+  showSegumentByHashLink(id);     // タブセグメントを表示する
+  return false;                   // aタグをクリックした際の通常動作
+                                  // (リンク先へのジャンプ)を無効にする。
 });
 
-
-// 上記の動きをページが読み込まれたらすぐに動かす
-$(window).on('load', function () {
-  $('.tab.menu li:first-of-type').addClass("active"); // 最初のliにactiveクラスを追加
-  $('.tab.segument:first-of-type').addClass("active"); // 最初の.areaにis-activeクラスを追加
-  let hashName = location.hash; // リンク元の指定されたURLのハッシュタグを取得
-  getHashID (hashName);// 設定したタブの読み込み
+// ページ読み込み完了時に、以下が実行される。
+$(window).on('load', () => {
+  let locationHashLink = location.hash;     // URLのフラグメント識別子(ハッシュリンク)を取得
+  showSegumentByHashLink(locationHashLink); // 設定したタブセグメントの読み込み
 });

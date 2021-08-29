@@ -1,0 +1,107 @@
+/* レスポンシブな文字サイズ */
+/* 今すぐ使える CSS レシピブック より */
+.button {
+  font-size: 16px;
+}
+
+@media (min-width:320px) {
+  .button {
+    font-size: calc((24 - 16) * ((100vw - 320px) / (960 - 320)) + 16px);
+  }
+}
+
+@media (min-width: 960px) {
+  .button {
+    font-size: 24px;
+  }
+}
+
+/* CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説！ */
+/* https://jajaaan.co.jp/css/button/ */
+
+/* ボタンの基本形 */
+.button {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/* グラデーションボタン */
+a.gradient.button span {
+  position: relative;
+  z-index: 1;
+  width: 50vw;
+  display: inline-block;
+}
+
+a.gradient.button:hover {
+  color: #fff;
+}
+
+a.gradient.button:hover::after {
+  opacity: 0;
+}
+
+a.gradient.button {
+  color: #fff;
+  border-radius: 100vh;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+a.gradient.button span {
+  background-image: linear-gradient(to right, #93a5cf 0%, #e4efe9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a.gradient.button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+}
+
+a.gradient.button span {
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 金塊のようなボタン */
+a.gold.button {
+  color: #b1921b;
+  border-right: 4px solid #cea82c;
+  border-bottom: 10px solid #987c1e;
+  border-left: 4px solid #ffed8b;
+  border-radius: 0;
+  background: linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%);
+  text-shadow: -1px -1px 1px #ffffd9;
+  font-size: 16px;
+}
+
+a.gold.button span {
+  white-space: nowrap;
+}
+
+a.gold.button:hover {
+  margin-top: 3px;
+  color: #b1921b;
+  border-right: 4px solid #cea82c;
+  border-bottom: 7px solid #987c1e;
+  border-left: 4px solid #ffed8b;
+}

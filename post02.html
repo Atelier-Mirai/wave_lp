@@ -12,9 +12,9 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。Javascript と、jQuery ライブラリ Modaal の練習です。">
+    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。Javascript と、タブメニュー・続きを読むの練習です。">
 
-    <!-- ビューポート -->
+    <!-- ビューポート(視点)の設定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- Google Fonts -->
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <!-- A modern CSS reset -->
-    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
@@ -55,11 +55,11 @@
     <main class="main">
 
       <ul class="tab menu">
-        <li><a href="#midori" data-tab="first">緑のアクセント</a></li>
+        <li><a href="#midori" data-tab="first" class="active">緑のアクセント</a></li>
         <li><a href="#komono" data-tab="second">小物と飾り棚</a></li>
       </ul>
 
-      <article id="midori" class="tab segument">
+      <article id="midori" class="tab segument active">
         <h1>緑のアクセントならこれ</h1>
 
         <time datetime="2021-08-25">
@@ -119,43 +119,6 @@
           </blockquote>
         </figure>
       </article>
-<!--
-      タブ
-
-      モーダル
-
-      <ul class="tab menu">
-        <li><a href="#lunch" data-tab="first">ランチ</a></li>
-        <li><a href="#drink" data-tab="second">ドリンク</a></li>
-        <li><a href="#dinner" data-tab="third">ディナー</a></li>
-      </ul>
-
-      <div id="lunch" class="tab segument" data-tab="first">
-        <h2>ランチ menu</h2>
-      </div>
-      <div id="drink" class="tab segument" data-tab="second">
-        <h2>ドリンク menu</h2>
-      </div>
-      <div id="dinner" class="tab segument" data-tab="third">
-        <h2>ディナー menu</h2>
-      </div> -->
-
-
-      <!-- <div class="ui top attached tabular menu">
-        <a class="item" data-tab="first">First</a>
-        <a class="item" data-tab="second">Second</a>
-        <a class="item active" data-tab="third">Third</a>
-      </div>
-      <div class="ui bottom attached tab segment" data-tab="first">
-        First
-      </div>
-      <div class="ui bottom attached tab segment" data-tab="second">
-        Second
-      </div>
-      <div class="ui bottom attached tab segment active" data-tab="third">
-        Third
-      </div> -->
-
     </main>
 
     <div class="submenu">
