@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- サイトに関する設定事項を記述します -->
   <head>
     <!-- 文字コードの指定 -->
     <meta charset="utf-8">
@@ -7,32 +8,38 @@
     <!-- ページのタイトル -->
     <title>スケッチが楽しくなるノート - WAVE</title>
 
-    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <!-- ファビコンの指定 -->
+    <!-- https://ao-system.net/favicongenerator/ -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
+    <meta name="description" content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。">
 
-    <!-- ビューポート -->
+    <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/master.css">
   </head>
 
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
+    <!-- ヘッダー(サイト名) -->
     <header>
-      <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
+      <a href="index.html">WAVE</a>
     </header>
 
+    <!-- ナビゲーションメニュー -->
     <nav>
       <ul>
         <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
@@ -45,6 +52,7 @@
       </ul>
     </nav>
 
+    <!-- 投稿記事 -->
     <article>
       <h1>スケッチが楽しくなるノート</h1>
 
@@ -68,20 +76,31 @@
       </p>
     </article>
 
-    <div>
-      <aside>
+    <!-- サブメニュー -->
+    <div class="submenu">
+      <!-- プロフィール -->
+      <aside class="profile">
         <h2>PROFILE</h2>
         <figure>
-          <img src="images/profile.jpg" alt="WAVEの管理人">
+          <img src="images/profile.jpg" alt="WAVEの管理人" class="circular">
         </figure>
         <p>
           部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
         </p>
       </aside>
 
-      <aside>
+      <!-- ピックアップ記事 -->
+      <aside class="pickup">
         <h2>PICKUP</h2>
         <ul>
+          <li>
+            <a href="post01.html">
+              <figure>
+                <img src="images/note.jpg" alt="">
+              </figure>
+              <h3>スケッチが楽しくなるノート</h3>
+            </a>
+          </li>
           <li>
             <a href="post02.html">
               <figure>
@@ -91,7 +110,7 @@
             </a>
           </li>
           <li>
-            <a href="post03.html">
+            <a href="post02.html#komono">
               <figure>
                 <img src="images/items.jpg" alt="">
               </figure>
@@ -106,10 +125,27 @@
               <h3>居心地のいい部屋にあるもの</h3>
             </a>
           </li>
+          <li>
+            <a href="post05.html">
+              <figure>
+                <img src="images/tile.jpg" alt="">
+              </figure>
+              <h3>カラフルなタイル</h3>
+            </a>
+          </li>
+          <li>
+            <a href="post06.html">
+              <figure>
+                <img src="images/recipe.jpg" alt="">
+              </figure>
+              <h3>美味しいオムレツのレシピ</h3>
+            </a>
+          </li>
         </ul>
       </aside>
     </div>
 
+    <!-- フッター -->
     <footer>&copy; WAVE</footer>
   </body>
 </html>

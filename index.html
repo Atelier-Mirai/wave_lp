@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- サイトに関する設定事項を記述します -->
   <head>
     <!-- 文字コードの指定 -->
     <meta charset="utf-8">
@@ -7,110 +8,68 @@
     <!-- ページのタイトル -->
     <title>WAVE</title>
 
-    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <!-- ファビコンの指定 -->
+    <!-- https://ao-system.net/favicongenerator/ -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
+    <meta name="description" content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。">
 
-    <!-- ビューポート -->
+    <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <link rel="stylesheet" href="magnific-popup-custom.css">
-
-    <!-- slick-carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="slick-custom.css">
-
-    <!-- Vegas - Fullscreen Backgrounds and Slideshows. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
-    <link rel="stylesheet" href="vegas-custom.css">
-
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="colors.css">
-    <link rel="stylesheet" href="button.css">
-    <link rel="stylesheet" href="scroll.css">
-    <link rel="stylesheet" href="page-top.css">
-    <link rel="stylesheet" href="glow-text.css">
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="utility.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/master.css">
   </head>
 
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="top">
-    <!-- デスクトップ用ナビゲーションメニュー -->
-    <header id="desktop-header" class="hidden">
-      <div class="logo">
-        <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
-      </div>
-      <nav>
-        <ul>
-          <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-          <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-          <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
-          <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
-          </li>
-          <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-          <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
-        </ul>
-      </nav>
+    <!-- ヘッダー(サイト名) -->
+    <header>
+      <a href="index.html">WAVE</a>
     </header>
 
-    <!-- モバイル用ナビゲーションメニュー -->
-    <header id="mobile-header" class="hidden">
-      <!-- ハンバーガーメニュー -->
-      <div class="open-button">
-        <!-- CSS で spanタグをハンバーガーの線に変える -->
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- ナビゲーションメニュー -->
-      <nav>
-        <ul id="mobile-menu">
-          <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
-          </li>
-          <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-          <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- ナビゲーションメニュー -->
+    <nav>
+      <ul>
+        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+        <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
+        </li>
+        <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
+        <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
+      </ul>
+    </nav>
 
-    <div id="vegas-slider">
-      <h1 class="glow text">Best place to visit in the world</h1>
-      <!-- <p><a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a></p> -->
-      <a href="https://github.com/Atelier-Mirai/wave-html" class="gradient button">
-        <span>ソースコードは<br class="mobile only">こちら</span>
-      </a>
-    </div>
-
-    <!-- スクロールを促す -->
-    <div class="scroll down">
-      <span>Scroll</span>
-    </div>
-
-    <!-- <figure class="hero">
+    <!-- ヒーローイメージ -->
+    <figure class="hero">
       <img src="images/room.jpg" alt="快適な室内空間">
     </figure>
-    <h1 class="title">Best place to visit in the world</h1>
-    <p class="subtitle">
-      <img src="images/circle.svg" alt=""><br>
-      <a href="https://github.com/Atelier-Mirai/wave-html">空間を彩る多彩なアイテム</a>
-    </p> -->
 
-    <section class="recent">
-      <h2>最近の投稿</h2>
+    <!-- タイトル(キャッチフレーズ) -->
+    <h1>Best place to visit in the world</h1>
+
+    <!-- サブタイトル -->
+    <p>
+      <img src="images/circle.svg" alt=""><br>
+      <a href="https://github.com/Atelier-Mirai/wave_example">空間を彩る多彩なアイテム</a>
+    </p>
+
+    <!-- 記事一覧 -->
+    <section>
+      <h2>最新記事</h2>
+
       <article>
         <a href="post01.html">
           <figure>
@@ -154,117 +113,14 @@
       <article>
         <a href="post06.html">
           <figure>
-            <img src="images/modaal.jpg" alt="">
+            <img src="images/recipe.jpg" alt="">
           </figure>
-          <h3>モーダルウィンドウ</h3>
-        </a>
-      </article>
-      <article>
-        <a href="shuffle_text/index.html">
-          <figure>
-            <img src="images/shuffle-text.jpg" alt="">
-          </figure>
-          <h3>シャッフルテキスト</h3>
+          <h3>美味しいオムレツのレシピ</h3>
         </a>
       </article>
     </section>
 
-    <section class="zoo">
-      <h2>動物園の思い出</h2>
-      <p>動物園に行ってきました。いろいろな動物に会えました。</p>
-
-      <div>
-        <a href="images/tora.jpg" title="大きな虎です">
-          <img src="images/tora_s.jpg">
-        </a>
-        <a href="images/tsuru.jpg" title="鶴です">
-          <img src="images/tsuru_s.jpg">
-        </a>
-        <a href="images/zou.jpg" title="象さん 象さん お鼻が長いのね">
-          <img src="images/zou_s.jpg">
-        </a>
-        <a href="images/saru.jpg" title="お猿さんです">
-          <img src="images/saru_s.jpg">
-        </a>
-        <a href="images/hakucho.jpg" title="白鳥の湖">
-          <img src="images/hakucho_s.jpg">
-        </a>
-        <a href="images/araiguma.jpg" title="洗熊です">
-          <img src="images/araiguma_s.jpg">
-        </a>
-        <a href="images/kuma.jpg" title="熊さんです">
-          <img src="images/kuma_s.jpg">
-        </a>
-      </div>
-    </section>
-
-    <!-- Grid Of Sliders -->
-    <!-- https://codepen.io/jackharner/pen/gyyeEd -->
-    <section class="sea">
-      <div class="slider-wrapper">
-        <h2>海の思い出</h2>
-        <p>海に行ってきました。波の音はとっても心落ち着きます。</p>
-
-        <div class="slider">
-          <div class="card">
-            <img src="images/sea01.jpg" alt="">
-            <h3>空飛ぶ鷗</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea02.jpg" alt="">
-            <h3>砂浜に打ち寄せる波</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea03.jpg" alt="">
-            <h3>透明な南の海</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea04.jpg" alt="">
-            <h3>夜明け前</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea05.jpg" alt="">
-            <h3>断崖にて</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea06.jpg" alt="">
-            <h3>眼下を望む</h3>
-          </div>
-          <div class="card">
-            <img src="images/sea07.jpg" alt="">
-            <h3>幾星霜に耐えた老松</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <!-- ページの先頭にスムーズスクロール p412-p417-->
-      <p id="page-top">
-        <a href="#" class="gold button">
-          <span><i class="fas fa-angle-double-up fa-lg fa-fw"></i>Page Top</span>
-        </a>
-      </p>
-      &copy; WAVE
-    </footer>
-
-    <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="magnific-popup-custom.js"></script>
-    <!-- Slick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="slick-custom.js"></script>
-    <!-- Vegas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
-    <script src="vegas-custom.js"></script>
-    <!-- page top -->
-    <script src="page-top.js"></script>
-    <!-- glow text-->
-    <script src="glow-text.js"></script>
-    <!-- navigation -->
-    <script src="navigation.js"></script>
+    <!-- フッター -->
+    <footer>&copy; WAVE</footer>
   </body>
 </html>

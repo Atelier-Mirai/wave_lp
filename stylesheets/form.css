@@ -1,0 +1,81 @@
+/*=============================================================================
+  問い合わせフォーム
+  モバイル版・デスクトップ版 共通の設定
+=============================================================================*/
+form {
+  padding-top: 30px;
+}
+
+form p {
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  /* iOS では 16px 未満だと自動拡大されるので */
+  font-size: 16px;
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  font-family: 'Hachi Maru Pop', cursive;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background: var(--shinonomeiro);
+  border: none;
+  -webkit-appearance: none;
+}
+
+form input[required] ~ label.name::after,
+form textarea[required] ~ label.name::after {
+  content: "※";
+  color: var(--kyohiiro);
+}
+
+form span.required {
+  color: var(--kyohiiro);
+}
+
+form .hidden {
+  display: none;
+}
+
+/* ラベルの表示位置を上方に調整 */
+form label.name {
+  display: block;
+  order: 1;
+  transition: transform 0.2s;
+  transform: translateY(-72px) scale(1);
+  padding: 7px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+form textarea[required] ~ label.name {
+  transform: translateY(-154px) scale(1);
+}
+
+p.annotation {
+  text-align: right;
+  font-size: smaller;
+  margin-top: -40px;
+  margin-bottom: 0;
+}
+
+/*=============================================================================
+  デスクトップ版の設定
+=============================================================================*/
+@media (min-width: 768px) {
+  input[type="submit"] {
+    width: 240px;
+  }
+}

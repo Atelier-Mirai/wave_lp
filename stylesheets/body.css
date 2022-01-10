@@ -1,6 +1,25 @@
 /*=============================================================================
+  body
   モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  基本設定
+-----------------------------------------------------------------------------*/
+* {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  /* テキストの自動拡大を無効化 */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
 /*-----------------------------------------------------------------------------
   ページ全体の設定
@@ -9,17 +28,22 @@ body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-              [head]    100px
-              [main]    auto
-              [submenu] auto
-              [foot]    100px;
+              [head]   100px
+              [title]  auto
+              [sub]    auto
+              [recent] auto
+              [foot]   100px;
   row-gap: 20px;
-  font-family: 'Kaisei Opti', serif;
-  /* テキストの自動拡大を無効化 */
-  text-size-adjust: none;
+  font-family: "Helvetica Neue",
+                Arial,
+                "Hiragino Kaku Gotic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
 }
 
-/* パーツの配置 */
+/* パーツの配置
+-----------------------------------------------------------------------------*/
 body > * {
   grid-column: 2 / -2;
 }
@@ -28,19 +52,12 @@ body > * {
   デスクトップ版の設定
 =============================================================================*/
 @media (min-width: 768px) {
-
-  /*-----------------------------------------------------------------------------
-    ページ全体の設定
-  -----------------------------------------------------------------------------*/
   body {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
     column-gap: 5%;
-    grid-template-rows:
-                        [head]         100px
-                        [main submenu] auto
-                        [foot]         100px;
+    grid-template-rows: [head]      100px
+                        [title sub] auto
+                        [recent]    auto
+                        [foot]      100px;
   }
-
-  .main    { grid-column: 2 / span 4 }
-  .submenu { grid-column: 6 / span 2 }
 }

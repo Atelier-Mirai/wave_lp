@@ -1,0 +1,44 @@
+/*=============================================================================
+  サブタイトル
+  モバイル版・デスクトップ版 共通の設定
+=============================================================================*/
+.top p {
+  grid-row: sub;
+  text-align: center;
+}
+
+.top p a {
+  color: var(--sakurairo);
+  text-decoration: none;
+
+  border: solid 1px var(--sakurairo);
+  padding: 10px 40px;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #555d6b80; /* 16進表記も可能 */
+}
+
+.top p a:hover {
+  background: #ef9504;
+}
+
+.top p img {
+  width: 250px;
+  margin: 0 auto;
+}
+
+/*=============================================================================
+  デスクトップ版の設定
+=============================================================================*/
+@media (min-width: 768px) {
+  .top p {
+    grid-column: 5 / span 3;
+    align-self: center;
+  }
+
+  .top p img {
+    width: 80%;
+    max-width: 460px;
+  }
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <!-- サイトに関する設定事項を記述します -->
   <head>
     <!-- 文字コードの指定 -->
     <meta charset="utf-8">
@@ -7,32 +8,38 @@
     <!-- ページのタイトル -->
     <title>お問い合わせ - WAVE</title>
 
-    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <!-- ファビコンの指定 -->
+    <!-- https://ao-system.net/favicongenerator/ -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
+    <meta name="description" content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。">
 
-    <!-- ビューポート -->
+    <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/master.css">
   </head>
 
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
+    <!-- ヘッダー(サイト名) -->
     <header>
-      <img src="images/logo.png" alt="ロゴマーク"><a href="index.html">WAVE</a>
+      <a href="index.html">WAVE</a>
     </header>
 
+    <!-- ナビゲーションメニュー -->
     <nav>
       <ul>
         <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
@@ -45,33 +52,15 @@
       </ul>
     </nav>
 
+    <!-- 投稿記事 -->
     <article>
       <h1>お問い合わせ</h1>
-
       <p>
         ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。
         記事に関するご質問などもお気軽にお寄せください。
       </p>
 
-      <!-- <form method="post" action="success.html" netlify="netlify">
-        <p>
-          <label>名前：</label>
-          <input type="text" name="name" required="required">
-        </p>
-        <p>
-          <label>メールアドレス：</label>
-          <input type="email" name="email" required="required">
-        </p>
-        <p>
-          <label>コメント：</label>
-          <textarea name="comment" required="required"></textarea>
-        </p>
-        <p>
-          <input type="submit" value="送信">
-        </p>
-      </form> -->
-
-      <form action="/success" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
+      <form action="/success.html" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
         <input type="hidden" name="form-name" value="contact">
         <label class="hidden" for="subject">件名</label>
         <input type="hidden" id="subject" name="subject"  value="Webサイトから「お問い合わせ」がありました。">
@@ -86,39 +75,50 @@
             <input name="bot-field">
           </label>
         </p>
+
         <p>
           <textarea autocapitalize="none" autocorrect="off" id="message" name="message" placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
           <label class="name" for="message">お問い合わせ内容</label>
         </p>
+
         <p>
           <input type="text" autocomplete="name" class="input" id="name" name="name" placeholder="山田 太郎" required="required">
           <label class="name" for="name">お名前</label>
         </p>
+
         <p>
           <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
           <label class="name" for="email">メールアドレス</label>
         </p>
+
         <p>
           <input type="tel" autocomplete="tel" class="input" id="tel" maxlength="11" minlength="7" name="tel" pattern="^(\d)*$" placeholder="0523734649">
           <label class="name" for="tel">電話番号</label>
         </p>
-        <p class="annotation"><span class="required">※</span> は、必須項目です。</p>
+
+        <p class="annotation">
+          <span class="required">※</span> は、必須項目です。
+        </p>
+
         <input type="submit" name="" value="送信">
       </form>
     </article>
 
-    <div>
-      <aside>
+    <!-- サブメニュー -->
+    <div class="submenu">
+      <!-- プロフィール -->
+      <aside class="profile">
         <h2>PROFILE</h2>
         <figure>
-          <img src="images/profile.jpg" alt="WAVEの管理人">
+          <img src="images/profile.jpg" alt="WAVEの管理人" class="circular">
         </figure>
         <p>
           部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
         </p>
       </aside>
 
-      <aside>
+      <!-- ピックアップ記事 -->
+      <aside class="pickup">
         <h2>PICKUP</h2>
         <ul>
           <li>
@@ -138,7 +138,7 @@
             </a>
           </li>
           <li>
-            <a href="post03.html">
+            <a href="post02.html#komono">
               <figure>
                 <img src="images/items.jpg" alt="">
               </figure>
@@ -159,6 +159,14 @@
                 <img src="images/tile.jpg" alt="">
               </figure>
               <h3>カラフルなタイル</h3>
+            </a>
+          </li>
+          <li>
+            <a href="post06.html">
+              <figure>
+                <img src="images/recipe.jpg" alt="">
+              </figure>
+              <h3>美味しいオムレツのレシピ</h3>
             </a>
           </li>
         </ul>

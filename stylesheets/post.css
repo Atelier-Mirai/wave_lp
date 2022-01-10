@@ -1,0 +1,70 @@
+/*=============================================================================
+  記事ページ
+  モバイル版・デスクトップ版 共通の設定
+=============================================================================*/
+.post {
+  grid-template-rows: [head]    100px
+                      [kiji]    auto
+                      [submenu] auto
+                      [foot]    100px;
+}
+
+/* 投稿記事 */
+.post article {
+  grid-row: kiji;
+}
+
+.post article > * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: block;
+}
+
+.post article h1 {
+  font-family: 'Yuji Boku', serif;
+}
+
+.post article p {
+  line-height: 2;
+}
+
+/* 区切り線 */
+.post::before {
+  content: "";
+  background: var(--nibiiro);
+  height: 2px;
+  grid-column: 1 / -1;
+  grid-row: kiji;
+}
+
+/* 時計アイコン */
+.fa-clock {
+  color: var(--amairo);
+}
+
+/*=============================================================================
+  デスクトップ版の設定
+=============================================================================*/
+@media (min-width: 768px) {
+  .post {
+    grid-template-rows: [head]         100px
+                        [kiji submenu] auto
+                        [foot]         100px;
+  }
+
+  .post article {
+    grid-column: 2 / span 4;
+  }
+
+  .post article h1 {
+    font-size: 42px;
+  }
+
+  .post article p {
+    font-size: 18px;
+  }
+
+  .post::before {
+    margin-top: -20px;
+  }
+}
