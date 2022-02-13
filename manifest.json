@@ -1,18 +1,21 @@
 {
-  "name": "WAVE_EXAMPLE",
-  "short_name": "WAVE",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f380",
-  "display": "standalone",
-  "scope": "/",
-  "start_url": "/",
-  "icons": [{
-      "src": "images/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }, {
-      "src": "images/apple-touch-icon.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }],
+	"name": "WAVE_EXAMPLE",
+	"short_name": "WAVE",
+	"theme_color": "#2196f3",
+	"background_color": "#2196f380",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "images/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
+		{
+			"src": "images/apple-touch-icon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
 }
