@@ -11,7 +11,7 @@ figure.hero img {
   height: 547px;
   object-fit: cover;
   /* vertical-align: bottom; */
-  filter: brightness(70%);
+  filter: brightness(80%);
   z-index: -1;
   position: relative; /* hack */
 }
