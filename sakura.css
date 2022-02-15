@@ -1,13 +1,14 @@
 html, body {
   overflow-x: hidden;
   overflow-x: clip;
+  position: relative;
 }
 
 .hana {
   position: absolute;
   height: 0;
   width: 0;
-  border: 10px solid pink;
+  border: 10px solid transparent;
   border-radius: 15px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -21,7 +22,7 @@ html, body {
   left: -7px;
   height: 0;
   width: 0;
-  border: 10px solid pink;
+  border: 10px solid transparent;
   border-radius: 15px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -34,13 +35,13 @@ html, body {
 .t4, .t4::after { border-color: #ffc0cb; }
 .t5, .t5::after { border-color: #ffafbd; }
 
-.y1 { -webkit-animation: v1 10s infinite; }
-.y2 { -webkit-animation: v2 10s infinite; }
-.y3 { -webkit-animation: v3 9s infinite; }
-.y4 { -webkit-animation: v4 9s infinite; }
-.y5 { -webkit-animation: v5 8s infinite; }
+.a1 { -webkit-animation: a1 12s infinite; }
+.a2 { -webkit-animation: a2 10s infinite; }
+.a3 { -webkit-animation: a3  9s infinite; }
+.a4 { -webkit-animation: a4  9s infinite; }
+.a5 { -webkit-animation: a5  8s infinite; }
 
-@-webkit-keyframes v1 {
+@-webkit-keyframes a1 {
   from {
     -webkit-transform: rotate(0deg) scale(.9);
   }
@@ -52,7 +53,7 @@ html, body {
   }
 }
 
-@-webkit-keyframes v2 {
+@-webkit-keyframes a2 {
   from {
     -webkit-transform: rotate(-90deg) scale(.8);
   }
@@ -64,7 +65,7 @@ html, body {
   }
 }
 
-@-webkit-keyframes v3 {
+@-webkit-keyframes a3 {
   from {
     -webkit-transform: rotate(30deg) scale(.7);
   }
@@ -76,7 +77,7 @@ html, body {
   }
 }
 
-@-webkit-keyframes v4 {
+@-webkit-keyframes a4 {
   from {
     -webkit-transform: rotate(-120deg) scale(.6);
   }
@@ -88,7 +89,7 @@ html, body {
   }
 }
 
-@-webkit-keyframes v5 {
+@-webkit-keyframes a5 {
   from {
     -webkit-transform: rotate(60deg) scale(.5);
   }
