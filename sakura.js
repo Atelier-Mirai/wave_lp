@@ -55,8 +55,7 @@
 
     // ランダムに生成した初期表示位置（top, left）を設定する
     hanabirasTop[i]  = rand(-500, 0) + scroll;
-    // hanabirasLeft[i] = rand(0, windowWidth - HANABIRA_WIDTH);
-    hanabirasLeft[i] = rand(0, windowWidth);
+    hanabirasLeft[i] = rand(HANABIRA_WIDTH / 2, windowWidth - HANABIRA_WIDTH);
     divHanabira.setAttribute('style', `z-index: ${hanabiraBaseZIndex + i}; top: ${hanabirasTop[i]}px; left: ${hanabirasLeft[i]}px;`);
 
     // ランダムに生成した花びらの色とアニメーションのための css class を設定する
@@ -89,19 +88,24 @@
         if (yuragiCounter[i] <= yuragi[i]){
           hanabirasLeft[i] += rand(0.3, 0.6, "float");
           // もし、花びらが右にはみ出すようなら、左端に移動させる
-          // if (hanabirasLeft[i] + HANABIRA_WIDTH >= windowWidth){
-          if (hanabirasLeft[i] >= windowWidth){
-            hanabirasLeft[i] = 0;
+          if (hanabirasLeft[i] + HANABIRA_WIDTH >= windowWidth){
+            hanabirasLeft[i] = HANABIRA_WIDTH;
           }
           // 連続して右へ揺らいだならば、今度は左へ移動させる
         } else {
           hanabirasLeft[i] -= rand(0.3, 0.6, "float");
+          // もし、花びらが左にはみ出すようなら、右端に移動させる
+          if (hanabirasLeft[i] <= HANABIRA_WIDTH / 2){
+            hanabirasLeft[i] = windowWidth - HANABIRA_WIDTH;
+          }
         }
+
         // 右へyuragi回、左へyuragi回、揺らいだら、累積回数を0に初期化
         // これにより、再び、右へ揺らげるようにする
         if (yuragiCounter[i] >= yuragi[i] * 2){
           yuragiCounter[i] = 0;
         }
+
       // 花びらがウィンドウの下まできたら
       } else {
         // 花びらをウィンドウの上に戻し、画面幅内に表示する
