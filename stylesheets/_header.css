@@ -6,8 +6,6 @@ header  {
   grid-row: head;
   justify-self: center;
   align-self: center;
-  font-size: 40px;
-  color: #555d6b;
   font-family: 'Yuji Boku', serif;
 
   /* 画面幅に応じて可変するフォントサイズ */
