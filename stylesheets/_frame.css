@@ -4,7 +4,8 @@
 .frame {
   border: 8px solid #fff;
   /* 二つの影を付けることもできる */
-  box-shadow: 0 0 0 1px #ccc, 1px 3px 8px 0 #25252555;
+  box-shadow: 0 0 0 1px #ccc,
+              1px 3px 8px 0 #25252555;
 }
 
 .sepia.frame img {
