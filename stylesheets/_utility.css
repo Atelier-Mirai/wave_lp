@@ -18,7 +18,7 @@
   display: inherit;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .mobile.only {
     display: none;
   }

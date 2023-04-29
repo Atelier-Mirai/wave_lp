@@ -1,0 +1,245 @@
+/* 暦 & 簡易ブログ のための CSS
+ * https://codepen.io/daliannyvieira/pen/EgvbKB を参考に実装
+-------------------------------------------------------------------------*/
+
+/* 色
+---------------------------------------------------------------------*/
+:root {
+  --wakakusairo: #abc900;
+  --sorairo: #a0d8ef;
+  --tokiiro: #f4b3c2;
+  --botaniro: #e7609e;
+  --hinomaru: #bc012d;
+  --kinariiro: #fbfaf5;
+  --kurobeni: #302833;
+  --kurobeni_8: #30283380;
+}
+
+/* リセットCSS
+---------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* 暦の背景写真
+---------------------------------------------------------------------*/
+#wallpaper {
+  /* width: 100vw;
+  height: 100vh; */
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows:    1fr auto 1fr;
+
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 月に応じて 写真が変わるように */
+/* ぱくたそ https://www.pakutaso.com/
+  pro.foto https://pro-foto.jp/
+  BEIZ images https://www.beiz.jp/
+  Pixabay https://pixabay.com/ja/ */
+#wallpaper[data-month= "1"] { background-image: url("images/calendar/snow.webp"); }
+#wallpaper[data-month= "2"] { background-image: url("images/calendar/glasslands.webp"); }
+#wallpaper[data-month= "3"] { background-image: url("images/calendar/hoursetail.webp"); }
+#wallpaper[data-month= "4"] { background-image: url("images/calendar/cherry.webp"); }
+#wallpaper[data-month= "5"] { background-image: url("images/calendar/leaves.webp"); }
+#wallpaper[data-month= "6"] { background-image: url("images/calendar/water.webp"); }
+#wallpaper[data-month= "7"] { background-image: url("images/calendar/sea.webp"); }
+#wallpaper[data-month= "8"] { background-image: url("images/calendar/sky.webp"); }
+#wallpaper[data-month= "9"] { background-image: url("images/calendar/light.webp"); }
+#wallpaper[data-month="10"] { background-image: url("images/calendar/deodora.webp"); }
+#wallpaper[data-month="11"] { background-image: url("images/calendar/maple.webp"); }
+#wallpaper[data-month="12"] { background-image: url("images/calendar/night.webp"); }
+
+/* 暦
+---------------------------------------------------------------------*/
+#calendar {
+  grid-column: 2;
+  grid-row: 2;
+
+  /* 5fr / 14.4fr = 34.7vw */
+  width: clamp(280px, 34.7vw, 380px);
+  background: var(--kinariiro);
+  color: var(--kurobeni);
+  border-radius: 10px;
+  box-shadow: 0 20px 35px var(--kurobeni_8), 0 15px 10px var(--kurobeni_8);
+  font-family: 'Yuji Boku', serif;
+  font-size: 1.2em;
+}
+
+/* 月ごとの暦の写真
+---------------------------------------------------------------------*/
+#calendar .photograph {
+  aspect-ratio: 16 / 9; /* 横16楯9に設定 */
+  background-position: center center;
+  background-size: cover;
+}
+
+/* 月に応じて 写真が変わるように */
+#calendar .photograph[data-month= "1"] { background-image: url("images/calendar/suisen.webp"); }
+#calendar .photograph[data-month= "2"] { background-image: url("images/calendar/nanohana.webp"); }
+#calendar .photograph[data-month= "3"] { background-image: url("images/calendar/momo.webp"); }
+#calendar .photograph[data-month= "4"] { background-image: url("images/calendar/sakura.webp"); }
+#calendar .photograph[data-month= "5"] { background-image: url("images/calendar/fuji.webp"); }
+#calendar .photograph[data-month= "6"] { background-image: url("images/calendar/ajisai.webp"); }
+#calendar .photograph[data-month= "7"] { background-image: url("images/calendar/hanabi.webp"); }
+#calendar .photograph[data-month= "8"] { background-image: url("images/calendar/himawari.webp"); }
+#calendar .photograph[data-month= "9"] { background-image: url("images/calendar/higanbana.webp"); }
+#calendar .photograph[data-month="10"] { background-image: url("images/calendar/kosumosu.webp"); }
+#calendar .photograph[data-month="11"] { background-image: url("images/calendar/susuki.webp"); }
+#calendar .photograph[data-month="12"] { background-image: url("images/calendar/tsubaki.webp"); }
+
+/* 操作盤
+---------------------------------------------------------------------*/
+#calendar .panel {
+  display: grid;
+  grid-template-columns: 1fr 4fr 3fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 10px 0px;
+}
+
+#calendar .prev  { grid-column: 1;  grid-row: 1; }
+#calendar .year  { grid-column: 2;  grid-row: 1; }
+#calendar .month { grid-column: 3;  grid-row: 1; }
+#calendar .next  { grid-column: 4;  grid-row: 1; }
+#calendar .prev,
+#calendar .next {  color: var(--kurobeni_8); width: 2em; }
+#calendar .prev:hover { transform: translateX(-5px); }
+#calendar .next:hover { transform: translateX( 5px); }
+#calendar .year,
+#calendar .month { font-size: larger; }
+
+/* 暦の本体
+---------------------------------------------------------------------*/
+/* _table.css が干渉した結果を、元に戻す */
+#calendar table { border-collapse: unset; }
+#calendar th, td { border: none; padding: 0; }
+#calendar td a { text-decoration: unset; color: unset; }
+#calendar td a:hover { text-decoration: unset; }
+#calendar th { width: unset; text-align: unset; text-align-last: unset }
+#calendar tr:nth-child(odd)  th { background: unset; color: unset; }
+#calendar tr:nth-child(even) th { background: unset; color: unset; }
+#calendar tr:nth-child(odd)  td { background: unset; color: unset; }
+#calendar tr:nth-child(even) td { background: unset; color: unset; }
+/* aside の css を少し調整 */
+aside.profile { padding: 30px; }
+aside.pickup  { padding: 0; }
+/* 配置を少し調整 */
+@media (width >= 768px) {
+  body { grid-template-columns: 0.2fr repeat(12, 1fr) 0.2fr; column-gap: 3%; }
+  .post article { grid-column: 2 / span 7; }
+  .post .submenu { grid-column: 9 / span 5; }
+}
+
+#calendar table {
+  width: 100%;
+  height: 346px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+#calendar thead {
+  color: var(--kurobeni_8)
+}
+
+#calendar tr th,
+#calendar tr td {
+  padding-bottom: .4em;
+}
+
+/* カレンダーの日付 & ブログ共通 */
+#calendar a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* カレンダーの日付 */
+#calendar table a {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+}
+
+/* 本日 */
+#calendar .today > a { background: var(--botaniro); color: var(--kinariiro); }
+
+/* 土日祝祭日 */
+#calendar .sunday   > a { background: var(--tokiiro); }
+#calendar .saturday > a { background: var(--sorairo); }
+#calendar .holiday  > a { background: var(--hinomaru); color: var(--kinariiro); }
+
+/* カーソルを載せるとほんのり染める */
+#calendar table a:hover {
+  background: var(--botaniro);
+  color: var(--kinariiro);
+  transition: .7s;
+  transform: scale(1);
+}
+
+/* ブログ執筆日 */
+#calendar table .blogday a {
+  outline: 6px double var(--wakakusairo); /* 若草色の輪郭線 */
+}
+#calendar table .blogday:hover a {
+  outline-offset: 7px;  /* 少し外側に 若草色の輪郭線 */
+  outline: 6px double var(--wakakusairo);
+  transition: .7s;
+  transform: scale(1);
+}
+
+/* ブログの見出し */
+#calendar .blog.header {
+  padding: 0 50px;
+  font-size: 1.15em;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 3px var(--kurobeni_8), -1px -1px 1px var(--wakakusairo);
+}
+
+/* ブログの一覧
+---------------------------------------------------------------------*/
+#calendar nav {
+  width: calc(100% - 20px);
+  height: 170px;
+  overflow-y: scroll;   /* 縦方向にスクロール */
+  margin: 0 10px 10px 10px;
+  border: 3px double var(--wakakusairo);
+}
+
+/* flexbox(一次元)を用いて 最新順に並べる */
+#calendar nav ul {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0em;
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+/* ブログ表題が長すぎるときは ... で省略 */
+#calendar nav ul li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+}
+
+/* カーソルを載せるとほんのり染める */
+#calendar nav a:hover {
+  background: var(--wakakusairo);
+  color: var(--kinariiro);
+  transition: .7s;
+  transform: scale(1);
+}

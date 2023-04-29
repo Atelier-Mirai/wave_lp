@@ -46,7 +46,7 @@ section h3::after {
 /*=============================================================================
   デスクトップ版の設定
 =============================================================================*/
-@media (min-width: 768px) {
+@media (width >= 768px) {
   section {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
