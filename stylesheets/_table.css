@@ -4,27 +4,31 @@
 =============================================================================*/
 table {
   border-collapse: collapse;
-}
 
-th,
-td {
-  border: solid 1px lightgray;
-  padding: 10px;
-}
+  & th,
+  & td {
+    border: solid 1px lightgray;
+    padding: 12px;
+  }
 
-td a {
-  text-decoration: none;
-  color: inherit;
-}
+  & th {
+    width: 5em;
+    text-align-last: justify; /* 均等割付 */
 
-td a:hover {
-  text-decoration: underline;
-}
+    & div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
-th {
-  width: 5em;
-  text-align: left; /* 左揃え */
-  text-align-last: justify; /* 均等割付 (Safari以外) */
+  & td a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /*  奇数行と偶数行とで、それぞれで色を変える */

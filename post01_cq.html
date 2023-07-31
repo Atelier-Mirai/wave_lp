@@ -6,13 +6,12 @@
     <meta charset="utf-8">
 
     <!-- ページのタイトル -->
-    <title>サイトについて - WAVE</title>
+    <title>スケッチが楽しくなるノート - WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
-    <!-- ファビコンの指定 -->
-    <!-- https://ao-system.net/favicongenerator/ -->
+    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
@@ -61,42 +60,27 @@
 
     <!-- 投稿記事 -->
     <article>
-      <h1>サイトについて</h1>
-      <p>
-        綺麗なインテリアや可愛い文房具など、日常の中で見つけたお気に入りのものを<ruby>纏<rt>まと</rt></ruby>めているサイトです。
-      </p>
+      <h1>スケッチが楽しくなるノート</h1>
 
-      <table>
-        <tr>
-          <th>サイト名</th>
-          <td>WAVE</td>
-        </tr>
-        <tr>
-          <th>開設日</th>
-          <td>四月一日</td>
-        </tr>
-        <tr>
-          <th>住所</th>
-          <td>名古屋市桜区桜町一丁目一番地<br>桜ビル一階</td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td><a href="tel:052-373-4649"><ruby>052-373-4649<rt>名古屋 皆さん 宜しく</rt></ruby></a></td>
-        </tr>
-        <tr>
-          <th>
-            <div>
-              <span>メ</span><span>ー</span><span>ル</span>
-            </div>
-            <span>アドレス</span>
-          </th>
-          <td><a href="mailto:contact@example.com">contact@example.com</a></td>
-        </tr>
-        <tr>
-          <th>運営方針</th>
-          <td>ときどきまったり更新中。最新記事の一覧はトップページに掲載しています。</td>
-        </tr>
-      </table>
+      <time datetime="2023-07-25">
+        <i class="fa-regular fa-clock fa-lg fa-fw"></i>
+        七月二十五日
+      </time>
+
+      <figure class="sepia rotate-3 frame">
+        <img src="images/note.webp"
+             alt="スケッチを書き込んだノート">
+      </figure>
+
+      <p>
+        楽しい文房具に囲まれていると、それだけで仕事や勉強にもやる気が出てきます。最近のお気に入りは、白地のノートです。
+      </p>
+      <p>
+        好きなことを自由に書き込むことができるので、ちょっとしたスケッチやメモ書きも楽しくなります。マーカーも良くなじむので、カラフルな図も綺麗に描くことができます。
+      </p>
+      <p>
+        スマホのアプリも便利ですが、たまには紙とペンを使ってみるのもお薦めです。
+      </p>
     </article>
 
     <!-- サブメニュー -->
@@ -112,11 +96,54 @@
         </p>
       </aside>
 
+      <style>
+
+      /* PICKUP写真が二列配置になっていたのを、一列配置にする */
+      .post .submenu .pickup ul.container {
+        grid-template-columns: 1fr;
+      }
+
+      /* containerクラス（親クラス）の幅に応じて、
+        itemクラス(子クラス)のスタイルを変更できるようにする */
+      .container {
+        container-type: inline-size;
+      }
+
+      /* itemクラス(子クラス)のスタイル */
+      /* 標準では、写真の下に表題が来るようにする */
+      .item {
+        & a {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          & figure { grid-column: 1; grid-row: 1; };
+          & h3     { grid-column: 1; grid-row: 2; }
+        }
+      }
+
+      /* containerクラス（親クラス）の幅が300px以上だったら */
+      @container (width > 300px) {
+        /* itemクラス(子クラス)のスタイル */
+        /* 写真の横に表題が来るようにする */
+        .item {
+          & a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            & figure { grid-column: 1; grid-row: 1; };
+            & h3     { grid-column: 2; grid-row: 1; }
+          }
+        }
+      }
+      </style>
+
       <!-- ピックアップ記事 -->
       <aside class="pickup">
         <h2>PICKUP</h2>
-        <ul>
-          <li>
+        <!-- <ul> -->
+        <ul class="container">
+          <!-- <li> -->
+          <li class="item">
             <a href="post01.html">
               <figure>
                 <img src="images/note.webp" alt="">
@@ -124,7 +151,8 @@
               <h3>スケッチが楽しくなるノート</h3>
             </a>
           </li>
-          <li>
+          <!-- <li> -->
+          <li class="item">
             <a href="post02.html">
               <figure>
                 <img src="images/plant.webp" alt="">
@@ -132,7 +160,8 @@
               <h3>緑のアクセントならこれ</h3>
             </a>
           </li>
-          <li>
+          <!-- <li> -->
+          <li class="item">
             <a href="post02.html#komono">
               <figure>
                 <img src="images/items.webp" alt="">
@@ -140,7 +169,8 @@
               <h3>小物と飾り棚の組み合わせ</h3>
             </a>
           </li>
-          <li>
+          <!-- <li> -->
+          <li class="item">
             <a href="post04.html">
               <figure>
                 <img src="images/chair.webp" alt="">
@@ -148,7 +178,8 @@
               <h3>居心地のいい部屋にあるもの</h3>
             </a>
           </li>
-          <li>
+          <!-- <li> -->
+          <li class="item">
             <a href="post05.html">
               <figure>
                 <img src="images/tile.webp" alt="">
@@ -156,7 +187,8 @@
               <h3>カラフルなタイル</h3>
             </a>
           </li>
-          <li>
+          <!-- <li> -->
+          <li class="item">
             <a href="post06.html">
               <figure>
                 <img src="images/recipe.webp" alt="">
@@ -168,6 +200,7 @@
       </aside>
     </div>
 
+    <!-- フッター -->
     <footer>© WAVE</footer>
   </body>
 </html>

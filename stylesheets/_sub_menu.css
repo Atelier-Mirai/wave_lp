@@ -1,9 +1,13 @@
 /*=============================================================================
   サブメニュー
-  モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
+
 .post .submenu {
   grid-row: submenu;
+  /* 画面幅が768px以上なら */
+  @media (width >= 768px) {
+    grid-column: 6 / span 2;
+  }
 }
 
 aside {
@@ -11,68 +15,57 @@ aside {
   padding: 20px;
   margin: 30px 0;
   text-align: center;
-}
 
-aside h2 {
-  border-bottom: solid 2px var(--sanaeiro);
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  color: var(--sanaeiro);
-  font-weight: normal;
+  & h2 {
+    border-bottom: solid 2px var(--sanaeiro);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: var(--sanaeiro);
+    font-weight: normal;
+    font-family: 'Yuji Boku', serif;
+  }
 
-  font-family: 'Yuji Boku', serif;
-}
-
-aside p {
-  font-size: 14px;
+  & p {
+    font-size: 14px;
+  }
 }
 
 /* プロフィール */
 .profile figure img {
-  margin: 0 auto; /* 中央揃え */
+  margin: 0 auto;
 }
 
 /* ピックアップ */
-.pickup ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
+.pickup {
+  & ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+    list-style: none;
+    padding: 0;
+    text-align: left;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 10px;
-}
+    & a {
+      color: var(--kurohairo);
+      text-decoration: none;
 
-.pickup ul a {
-  color: var(--kurohairo);
-  text-decoration: none;
-}
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
-.pickup ul a:hover {
-  text-decoration: underline;
-}
+  & h3 {
+    font-size: 14px;
 
-.pickup h3 {
-  font-size: 14px;
-}
+    &::before {
+      content: "▼";
+      color: var(--nanohanairo);
+    }
 
-.pickup h3::before {
-  content: "▼";
-  color: var(--nanohanairo);
-}
-
-.pickup h3::after {
-  content: "▲";
-  color: var(--utsushiiro);
-}
-
-/*=============================================================================
-  デスクトップ版の設定
-=============================================================================*/
-@media (width >= 768px) {
-
-  /* サブメニュー */
-  .post .submenu {
-    grid-column: 6 / span 2;
+    &::after {
+      content: "▲";
+      color: var(--utsushiiro);
+    }
   }
 }

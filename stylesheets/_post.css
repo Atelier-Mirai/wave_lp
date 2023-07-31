@@ -1,70 +1,131 @@
 /*=============================================================================
   記事ページ
-  モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
+
 .post {
-  grid-template-rows: [head]    100px
-                      [kiji]    auto
-                      [submenu] auto
-                      [foot]    100px;
-}
+  grid-template-rows:
+      [head]    100px
+      [kiji]    auto
+      [submenu] auto
+      [foot]    100px;
+      /* 画面幅768px以上 */
+      @media (width >= 768px) {
+        grid-template-rows:
+            [head] 100px
+            [kiji submenu] auto
+            [foot] 100px;
+      }
 
-/* 投稿記事 */
-.post article {
-  grid-row: kiji;
-}
+  /* 投稿記事 */
+  & article {
+    grid-row: kiji;
+    /* 画面幅768px以上 */
+    @media (width >= 768px) {
+      grid-column: 2 / span 4;
+    }
 
-.post article > * {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  display: block;
-}
+    > * {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      display: block;
+    }
 
-.post article h1 {
-  font-family: 'Yuji Boku', serif;
-}
+    & h1 {
+      font-family: 'Yuji Boku', serif;
+      /* 書体の大きさを可変にする */
+      /* https://chrisburnell.com/clamp-calculator/ */
+      font-size: clamp(1.5rem, 0.069rem + 6.107vw, 3rem);
+    }
 
-.post article p {
-  line-height: 2;
-}
-
-/* 区切り線 */
-.post::before {
-  content: "";
-  background: var(--nibiiro);
-  height: 2px;
-  grid-column: 1 / -1;
-  grid-row: kiji;
-}
-
-/* 時計アイコン */
-.fa-clock {
-  color: var(--amairo);
-}
-
-/*=============================================================================
-  デスクトップ版の設定
-=============================================================================*/
-@media (width >= 768px) {
-  .post {
-    grid-template-rows: [head]         100px
-                        [kiji submenu] auto
-                        [foot]         100px;
+    & p {
+      line-height: 2;
+      font-size: clamp(1rem, 0.881rem + 0.509vw, 1.125rem);
+    }
   }
 
-  .post article {
-    grid-column: 2 / span 4;
+  /* 区切り線 */
+  &::before {
+    content: "";
+    background: var(--nibiiro);
+    height: 2px;
+    grid-column: 1 / -1;
+    grid-row: kiji;
+    @media (width >= 768px) {
+      margin-top: -20px;
+    }
   }
 
-  .post article h1 {
-    font-size: 42px;
+  /* 時計アイコン */
+  .fa-clock {
+    color: var(--amairo);
   }
 
-  .post article p {
-    font-size: 18px;
-  }
+  .submenu {
+    grid-row: submenu;
+    /* 画面幅が768px以上なら */
+    @media (width >= 768px) {
+      grid-column: 6 / span 2;
+    }
 
-  .post::before {
-    margin-top: -20px;
+    /* aside 要素に枠線などの装飾を指定する */
+    & aside {
+      border: solid 1px var(--amairo);
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+
+      & h2 {
+        border-bottom: solid 2px var(--sanaeiro);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        color: var(--sanaeiro);
+        font-weight: normal;
+        font-family: 'Yuji Boku', serif;
+      }
+
+      & p {
+        font-size: 14px;
+      }
+    }
+
+    /* プロフィール画像の余白指定 */
+    .profile figure img {
+      margin: 0 auto;
+    }
+
+    /* ピックアップ記事の装飾指定 */
+    .pickup {
+      & ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 10px;
+        list-style: none;
+        padding: 0;
+        text-align: left;
+
+        & a {
+          color: var(--kurohairo);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      & h3 {
+        font-size: 14px;
+
+        &::before {
+          content: "▼";
+          color: var(--nanohanairo);
+        }
+
+        &::after {
+          content: "▲";
+          color: var(--utsushiiro);
+        }
+      }
+    }
   }
 }

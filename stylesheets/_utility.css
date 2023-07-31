@@ -6,30 +6,24 @@
 -----------------------------------------------------------------------------*/
 .link.disable {
   pointer-events: none;
-}
 
-.link.disable:hover {
-  pointer-events: none;
+  &:hover {
+    pointer-events: none;
+  }
 }
 
 /* モバイル / コンピュータ 切替
 -----------------------------------------------------------------------------*/
 .mobile.only {
   display: inherit;
-}
-
-@media (width >= 768px) {
-  .mobile.only {
+  @media (width >= 768px) {
     display: none;
   }
 }
 
 .computer.only {
   display: inherit;
-}
-
-@media (max-width: 768px) {
-  .computer.only {
+  @media (max-width: 768px) {
     display: none;
   }
 }
