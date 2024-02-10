@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- サイトに関する設定事項を記述します -->
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ページのタイトル -->
+    <title>WAVE</title>
+
+    <!-- ビューポート(視点)の指定 -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
+
+    <!-- 検索時に表示される、ウェブサイトの要約文 -->
+    <meta name="description" content="概ね80文字前後のサイトの
+    紹介文が、検索時に表示されます。">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <!-- PWA (Progressive Web Apps) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#477294">
+    <meta name="theme-color" content="#477294">
+    <meta name="apple-mobile-web-app-title" content="WAVE">
+    <link rel="manifest" href="/manifest.json">
+    <script src="app.js"></script>
+
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- 暦の為の CSS & JS 読み込み -->
+    <link rel="stylesheet" href="calendar.css">
+    <script defer src="calendar.js"></script>
+  </head>
+
+  <!-- 表示したい内容・出し物・コンテンツを記述します -->
+  <body class="post">
+    <!-- ヘッダー(サイト名) -->
+    <header>
+      <a href="index.html">WAVE</a>
+    </header>
+
+    <!-- ナビゲーションメニュー -->
+    <nav>
+      <ul>
+        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+        <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
+        <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- 投稿記事 -->
+    <article>
+      <h1>本日で連休も最後です</h1>
+
+      <time datetime="2024-05-07">
+        <i class="fa-regular fa-clock fa-lg fa-fw"></i>
+        五月七日
+      </time>
+
+      <figure class="rotate-3 frame">
+        <img src="images/sakura/sakura_mejiro.webp"
+             alt="櫻と目白">
+      </figure>
+
+      <p>
+        本日連休の最後です。公園でお散歩をしたり、絵を描いたり、おいしいものを食べたり、充実した連休でした。
+      </p>
+      <p>
+        好きなことをしていると、ちょっとした散歩も楽しくなります。飼っている子犬も良くなれてきて、一緒に仲良く櫻を眺めることができます。
+      </p>
+      <p>
+        スマホのアプリも便利ですが、たまには公園でお散歩するのもお薦めです。
+      </p>
+    </article>
+
+    <!-- サブメニュー -->
+    <div class="submenu">
+      <!-- プロフィール -->
+      <aside class="profile">
+        <h2>PROFILE</h2>
+        <figure>
+          <img src="images/profile.webp" alt="WAVEの管理人" class="circular">
+        </figure>
+        <p>
+          部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
+        </p>
+      </aside>
+
+      <!-- ブログ記事 -->
+      <aside class="pickup">
+
+        <!-- JS により 暦要素を生成 -->
+        <div id="wallpaper">
+          <div id="calendar"></div>
+        </div>
+
+      </aside>
+    </div>
+
+    <!-- フッター -->
+    <footer>© WAVE</footer>
+  </body>
+</html>

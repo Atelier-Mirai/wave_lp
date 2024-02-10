@@ -1,0 +1,56 @@
+/*====================================================
+  デスクトップ版の設定
+======================================================*/
+
+/* 画面幅が768px以上なら */
+@media (width >= 768px) {
+  /* ページ全体 */
+  body {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    column-gap: 5%;
+    grid-template-rows: [head]      100px
+                        [title sub] auto
+                        [recent]    auto
+                        [foot]      auto;
+  }
+
+  /* ヘッダー */
+  header {
+    justify-self: start;
+  }
+
+  /* ナビゲーションメニュー */
+  nav {
+    justify-self: end;
+    align-self: center;
+  }
+
+  /* ヒーローイメージ */
+  .hero {
+    grid-row: title;
+    margin-top: -20px;
+  }
+
+  /* タイトル */
+  h1 {
+    grid-column: 2 / span 3;
+    max-width: 460px;
+  }
+
+  /* サブタイトル */
+  .sub_title {
+    grid-column: 5 / span 3;
+    align-self: center;
+    img {
+      width: 80%;
+      max-width: 460px;
+    }
+  }
+
+  /* 記事一覧 */
+  section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+  }
+}

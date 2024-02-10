@@ -1,45 +1,48 @@
-/*=============================================================================
+/*===============================================
   記事ページ
-=============================================================================*/
-
+=================================================*/
 .post {
   grid-template-rows:
       [head]    100px
       [kiji]    auto
       [submenu] auto
-      [foot]    100px;
-      /* 画面幅768px以上 */
+      [foot]    auto;
+      /* 画面幅が768px以上なら */
       @media (width >= 768px) {
         grid-template-rows:
             [head] 100px
             [kiji submenu] auto
-            [foot] 100px;
+            [foot] auto;
       }
 
   /* 投稿記事 */
-  & article {
+  article {
     grid-row: kiji;
-    /* 画面幅768px以上 */
+    /* 画面幅が768px以上なら */
     @media (width >= 768px) {
       grid-column: 2 / span 4;
     }
 
+    /* 配下の要素の余白指定 */
     > * {
       margin-top: 1em;
       margin-bottom: 1em;
       display: block;
     }
 
-    & h1 {
-      font-family: 'Yuji Boku', serif;
+    /* 見出し */
+    h1 {
+      font-family: "Yuji Boku", serif;
       /* 書体の大きさを可変にする */
-      /* https://chrisburnell.com/clamp-calculator/ */
-      font-size: clamp(1.5rem, 0.069rem + 6.107vw, 3rem);
+      /* https://www.fluid-type-scale.com/ */
+      font-size: clamp(1.5rem, 2.73vw + 0.82rem, 3rem);
+      /* 文字間を詰める */
+      letter-spacing: -3px;
     }
 
-    & p {
+    /* 本文 */
+    p {
       line-height: 2;
-      font-size: clamp(1rem, 0.881rem + 0.509vw, 1.125rem);
     }
   }
 
@@ -50,6 +53,7 @@
     height: 2px;
     grid-column: 1 / -1;
     grid-row: kiji;
+    /* 画面幅が768px以上なら */
     @media (width >= 768px) {
       margin-top: -20px;
     }
@@ -60,6 +64,7 @@
     color: var(--amairo);
   }
 
+  /* サブメニュー */
   .submenu {
     grid-row: submenu;
     /* 画面幅が768px以上なら */
@@ -68,13 +73,14 @@
     }
 
     /* aside 要素に枠線などの装飾を指定する */
-    & aside {
+    aside {
       border: solid 1px var(--amairo);
       padding: 20px;
       margin: 30px 0;
       text-align: center;
 
-      & h2 {
+      /* 見出し */
+      h2 {
         border-bottom: solid 2px var(--sanaeiro);
         padding-bottom: 20px;
         margin-bottom: 20px;
@@ -83,7 +89,8 @@
         font-family: 'Yuji Boku', serif;
       }
 
-      & p {
+      /* 本文 */
+      p {
         font-size: 14px;
       }
     }
@@ -95,7 +102,8 @@
 
     /* ピックアップ記事の装飾指定 */
     .pickup {
-      & ul {
+      /* ピックアップ記事をグリッド配置する */
+      ul {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px 10px;
@@ -103,7 +111,8 @@
         padding: 0;
         text-align: left;
 
-        & a {
+        /* リンク */
+        a {
           color: var(--kurohairo);
           text-decoration: none;
 
@@ -113,18 +122,9 @@
         }
       }
 
-      & h3 {
+      /* 見出し */
+      h3 {
         font-size: 14px;
-
-        &::before {
-          content: "▼";
-          color: var(--nanohanairo);
-        }
-
-        &::after {
-          content: "▲";
-          color: var(--utsushiiro);
-        }
       }
     }
   }

@@ -32,7 +32,7 @@ body {
               [title]  auto
               [sub]    auto
               [recent] auto
-              [foot]   100px;
+              [foot]   auto;
   row-gap: 20px;
   font-family: "Helvetica Neue",
                 Arial,
@@ -48,9 +48,11 @@ body > * {
   grid-column: 2 / -2;
 }
 
-/*=============================================================================
+/*====================================================
   デスクトップ版の設定
-=============================================================================*/
+======================================================*/
+
+/* 画面幅が768px以上なら */
 @media (width >= 768px) {
   body {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
@@ -58,6 +60,6 @@ body > * {
     grid-template-rows: [head]      100px
                         [title sub] auto
                         [recent]    auto
-                        [foot]      100px;
+                        [foot]      auto;
   }
 }

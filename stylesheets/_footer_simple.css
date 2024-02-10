@@ -1,0 +1,19 @@
+/*=============================================================================
+  フッター
+=============================================================================*/
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+
+  font-family: 'Yuji Boku', serif;
+}
+
+body::after {
+  content: "";
+  background: var(--sakurairo);
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
+}

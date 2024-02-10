@@ -16,7 +16,7 @@ aside {
   margin: 30px 0;
   text-align: center;
 
-  & h2 {
+  h2 {
     border-bottom: solid 2px var(--sanaeiro);
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -25,7 +25,7 @@ aside {
     font-family: 'Yuji Boku', serif;
   }
 
-  & p {
+  p {
     font-size: 14px;
   }
 }
@@ -37,7 +37,7 @@ aside {
 
 /* ピックアップ */
 .pickup {
-  & ul {
+  ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px 10px;
@@ -45,7 +45,7 @@ aside {
     padding: 0;
     text-align: left;
 
-    & a {
+    a {
       color: var(--kurohairo);
       text-decoration: none;
 
@@ -55,7 +55,7 @@ aside {
     }
   }
 
-  & h3 {
+  h3 {
     font-size: 14px;
 
     &::before {

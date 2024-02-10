@@ -3,14 +3,14 @@
 =============================================================================*/
 
 /* Google Fonts より Hachi Maru Pop 書体 を 読み込む */
-@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap");
 
 /* form 要素を対象に 装飾指定する */
 form {
   padding-top: 30px;    /* 上に空白を設ける */
 
   /* form 内の p 要素を対象に 装飾指定する */
-  & p {
+  p {
     margin-bottom: 20px;
   }
 
@@ -20,8 +20,8 @@ form {
   }
 
   /* 入力枠、長文入力枠への装飾指定 */
-  & input,
-  & textarea {
+  input,
+  textarea {
     width: 100%;            /* 幅 */
     box-sizing: border-box; /* padding込で幅を指定する */
     padding: 10px;          /* 空白を設ける */
@@ -31,17 +31,17 @@ form {
   }
 
   /* 入力欄に表示される入力例の文字(プレイスホルダ) */
-  & input::placeholder,
-  & textarea::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     font-family: 'Hachi Maru Pop', cursive; /* はちまるポップ体 */
   }
 
-  & textarea {
+  textarea {
     height: 120px;
   }
 
   /* <input type="submit"> の要素を対象に装飾を指定 */
-  & input[type="submit"] {
+  input[type="submit"] {
     background: var(--shinonomeiro);  /* 東雲色 */
     border: none;                     /* 枠線無し */
     -webkit-appearance: none;         /* ブラウザによる送信ボタン装飾無し */
@@ -60,7 +60,7 @@ form {
   }
 
   /* ラベルの表示位置を上方に調整 */
-  & label {
+  label {
     display: block;     /* ブロック要素として表示にする
                            幅と高さを持てるようになるので、上に移動可能となる */
     transform: translateY(-80px) scale(1); /* 位置を上にずらす */
@@ -68,7 +68,7 @@ form {
     padding: 7px;       /* 空白を設ける */
   }
   /* textarea 要素 に「~(チルダ・隣接)」する label 要素を対象に */
-  & textarea ~ label {
+  textarea ~ label {
     transform: translateY(-164px) scale(1); /* さらに上方に移動 */
   }
 }

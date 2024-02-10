@@ -71,11 +71,8 @@
   box-shadow: 0 20px 35px var(--kurobeni_8), 0 15px 10px var(--kurobeni_8);
   font-family: 'Yuji Boku', serif;
   font-size: 1.2em;
-}
 
-/* 月ごとの暦の写真
----------------------------------------------------------------------*/
-#calendar {
+  /* 月ごとの暦の写真 */
   .photograph {
     aspect-ratio: 16 / 9; /* 横16楯9に設定 */
     background-position: center center;
@@ -109,7 +106,7 @@
   .month { grid-column: 3;  grid-row: 1; }
   .next  { grid-column: 4;  grid-row: 1; }
   .prev,
-  .next {  color: var(--kurobeni_8); width: 2em; }
+  .next  { color: var(--kurobeni_8); width: 2em; }
   .prev:hover { transform: translateX(-5px); }
   .next:hover { transform: translateX( 5px); }
   .year,
@@ -141,7 +138,7 @@
   .post .submenu { grid-column: 9 / span 5; }
 }
 
-/* カレンダーの日付 */
+/* 日付欄 */
 #calendar table {
   width: 100%;
   height: 346px;

@@ -2,27 +2,25 @@
  * https://www.cssscript.com/basic-calendar-view/ を参考に実装
 -------------------------------------------------------------------------*/
 
-// ブログデータを取得
-const BLOGS = {
-  "R05-04-01": "本日四月一日より令和五年度の始まり、近くの公園の桜も咲いています。",
-  "R05-04-03": "仕事始めです",
-  "R05-04-07": "週末はゆっくりします",
-  "R05-04-19": "公園でお散歩しました",
-  "R05-04-20": "今日も公園でお散歩しました",
-  "R05-04-29": "昭和の日です",
-  "R05-05-05": "こどもの日のお祝いです",
-  "R05-05-07": "連休も今日で最後です",
-  "R05-06-01": "今日から六月です",
-  "R05-06-10": "時の記念日です"
-}
+// 祝日データを取り込む
+import HOLIDAYS from "./holidays.js"
 
-// 祝日データ
-// Holidays JP API より 祝日データを取得し 貼り付ける
-// https://holidays-jp.github.io/api/v1/date.json
-const HOLIDAYS = {"2022-01-01": "元日", "2022-01-10": "成人の日", "2022-02-11": "建国記念の日", "2022-02-23": "天皇誕生日", "2022-03-21": "春分の日", "2022-04-29": "昭和の日", "2022-05-03": "憲法記念日", "2022-05-04": "みどりの日", "2022-05-05": "こどもの日", "2022-07-18": "海の日", "2022-08-11": "山の日", "2022-09-19": "敬老の日", "2022-09-23": "秋分の日", "2022-10-10": "スポーツの日", "2022-11-03": "文化の日", "2022-11-23": "勤労感謝の日", "2023-01-01": "元日", "2023-01-02": "休日 元日", "2023-01-09": "成人の日", "2023-02-11": "建国記念の日", "2023-02-23": "天皇誕生日", "2023-03-21": "春分の日", "2023-04-29": "昭和の日", "2023-05-03": "憲法記念日", "2023-05-04": "みどりの日", "2023-05-05": "こどもの日", "2023-07-17": "海の日", "2023-08-11": "山の日", "2023-09-18": "敬老の日", "2023-09-23": "秋分の日", "2023-10-09": "スポーツの日", "2023-11-03": "文化の日", "2023-11-23": "勤労感謝の日", "2024-01-01": "元日", "2024-01-08": "成人の日", "2024-02-11": "建国記念の日", "2024-02-12": "建国記念の日 振替休日", "2024-02-23": "天皇誕生日", "2024-03-20": "春分の日", "2024-04-29": "昭和の日", "2024-05-03": "憲法記念日", "2024-05-04": "みどりの日", "2024-05-05": "こどもの日", "2024-05-06": "こどもの日 振替休日", "2024-07-15": "海の日", "2024-08-11": "山の日", "2024-08-12": "休日 山の日", "2024-09-16": "敬老の日", "2024-09-22": "秋分の日", "2024-09-23": "秋分の日 振替休日", "2024-10-14": "スポーツの日", "2024-11-03": "文化の日", "2024-11-04": "文化の日 振替休日", "2024-11-23": "勤労感謝の日"}
+// ブログデータを取得
+import BLOGS from "./blogs.js"
+console.log(BLOGS)
+console.log(BLOGS["R06-01-01"])
+// console.log(BLOGS["R06-01-01"]["header"])
+// console.log(BLOGS["R06-01-01"].header)
+// console.log(BLOGS["R06-01-01"]["body"])
+// let body = BLOGS["R06-01-01"]["body"]
+// console.log(body)
+// console.log(body.trim())
+//
+
+
 
 // ブログに日付の記載があれば、それを、無ければ今日を、当日の日付とする
-// <time datetime="2023-04-01">四月一日</time>
+// <time datetime="2024-04-01">四月一日</time>
 let today = document.querySelector("time")
 let t
 if (today && (t = today.getAttribute("datetime"))) {
@@ -96,9 +94,9 @@ calendar.appendChild(panel)
 const table = document.createElement("table")
 const thead = document.createElement("thead")
 let tr = document.createElement("tr")
-for (wday in WDAYS) {
-  th   = document.createElement("th")
-  text = document.createTextNode(`${WDAYS[wday]}`)
+for (let wday in WDAYS) {
+  let th   = document.createElement("th")
+  let text = document.createTextNode(`${WDAYS[wday]}`)
   th.appendChild(text)
   tr.appendChild(th)
 }
@@ -116,6 +114,9 @@ let ul = document.createElement("ul")
 ul.id = "ul"
 nav.appendChild(ul)
 calendar.appendChild(nav)
+nav.appendChild(ul)
+
+
 
 // 当月の暦生成&表示
 showCalendar(currentYear, currentMonth)
@@ -153,17 +154,16 @@ function showCalendar(year, month) {
   let firstDay = zeller(year, month, 1)
 
   // 以前の暦を削除 ＆ 今月の暦新規作成
-  tbody     = document.getElementById("tbody")
+  let tbody     = document.getElementById("tbody")
   if (tbody !== null) { tbody.remove() }
   tbody     = document.createElement("tbody")
   tbody.id  = "tbody"
 
   // 以前のブログ一覧を削除 ＆ 今月のブログ一覧新規作成
-  ul     = document.getElementById("ul")
-  if (ul !== null) { ul.remove() }
-  ul     = document.createElement("ul")
-  ul.id  = "ul"
-  nav.appendChild(ul)
+  // ul     = document.getElementById("ul")
+  // if (ul !== null) { ul.remove() }
+  // ul     = document.createElement("ul")
+  // ul.id  = "ul"
 
   // 月初の空日処理
   let wday = 0
@@ -171,15 +171,15 @@ function showCalendar(year, month) {
 
   // 月が始まるまでの空日処理
   for (let date = 1 - firstDay; date < 1; date++, wday++) {
-    td     = document.createElement("td")
+    let td = document.createElement("td")
     tr.appendChild(td)
   }
 
   // 一日から末日までの処理
-  for (date = 1; date <= daysInMonth(year, month); date++) {
-    td = document.createElement("td")
+  for (let date = 1; date <= daysInMonth(year, month); date++) {
+    let td = document.createElement("td")
     td.className = NAME_OF_DAY[wday]
-    a  = document.createElement("a")
+    let a  = document.createElement("a")
     a.setAttribute("href", "#")
     a.innerHTML = date
 
@@ -213,7 +213,7 @@ function showCalendar(year, month) {
 
       // ブログ一覧へのリンク生成
       let li = document.createElement("li")
-      blog_a  = document.createElement("a")
+      let blog_a  = document.createElement("a")
       blog_a.setAttribute("href", link)
       blog_a.innerHTML = blog_no_title
       li.appendChild(blog_a)

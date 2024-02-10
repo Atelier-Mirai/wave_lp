@@ -15,7 +15,7 @@ section {
     column-gap: 20px;
   }
 
-  & a {
+  a {
     color: var(--kurohairo);
     text-decoration: none;
 
@@ -24,16 +24,16 @@ section {
     }
   }
 
-  & h2 {
+  h2 {
     grid-column: 1 / -1;
-    font-family: 'Yuji Boku', serif;
+    font-family: "Yuji Boku", serif;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
     color: var(--kurohairo);
   }
 
-  & h3 {
+  h3 {
     font-size: 14px;
 
     /* 疑似要素を使った装飾 */

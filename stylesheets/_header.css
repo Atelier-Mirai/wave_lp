@@ -6,7 +6,7 @@ header  {
   grid-row: head;
   justify-self: center;
   align-self: center;
-  font-family: 'Yuji Boku', serif;
+  font-family: "Yuji Boku", serif;
 
   /* 画面幅に応じて可変するフォントサイズ */
   font-size: clamp(48px, 12vw, 54px);
@@ -27,41 +27,10 @@ header  {
   font-weight: bold;
   letter-spacing: 10px;
 
-  /* p107 テキストシャドウ */
-  /*
-  text-shadow: 5px 10px 10px #888888;
-  */
-
-  /* p163 ボックスシャドウ */
-  /*
-  border: solid 5px #ffaa00;
-  padding: 20px;
-  background: #ffff44;
-  border-radius: 10px;
-  box-shadow: 5px 10px 5px #aaaaaa;
-  */
-}
-
-/* 179 疑似要素による装飾 */
-/*
-header {
-  border: solid 5px #ffaa00;
-}
-
-header::before {
-  content: "▼";
-  color: #e0ce0d;
-}
-
-header::after {
-  content: "▲";
-  color: #3a7fff;
-}
-*/
-
-header a {
-  color: inherit;
-  text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /*=============================================================================
