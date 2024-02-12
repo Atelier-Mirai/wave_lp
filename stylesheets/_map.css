@@ -9,7 +9,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: 10px;
-
   @media (width >= 768px) {
     /* iPad や Mac では、二列 x 一行 で配置します */
     grid-template-columns: 2fr 1fr;
@@ -34,15 +33,12 @@
 .video-container .video {
   grid-column: 1;
   grid-row: 2;
-
   /* iPhone では、縦長(横2に対して縦3の比率)で表示します */
   aspect-ratio: 2 / 3;
-
   @media (width >= 768px) {
     /* 地図や動画を一列目に表示します */
     grid-column: 1;
     grid-row: 1;
-
     /* iPad や Mac では、横長(横16に対して縦9の比率)で表示します */
     aspect-ratio: 16 / 9;
   }

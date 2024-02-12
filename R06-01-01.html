@@ -6,14 +6,19 @@
     <meta charset="utf-8">
 
     <!-- ページのタイトル -->
-    <title>WAVE</title>
+    <title>スケッチが楽しくなるノート - WAVE</title>
 
     <!-- ビューポート(視点)の指定 -->
     <meta name="viewport" content="width=device-width">
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
-    <link rel="icon" href="images/favicon.ico" type="image/ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
+    <link rel="icon"
+          href="images/favicon.ico"
+          type="image/ico">
+    <link rel="apple-touch-icon"
+          href="images/apple-touch-icon-180x180.png"
+          type="image/png"
+          sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
     <meta name="description" content="概ね80文字前後のサイトの
@@ -22,96 +27,54 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
-
-    <!-- PWA (Progressive Web Apps) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#477294">
-    <meta name="theme-color" content="#477294">
-    <meta name="apple-mobile-web-app-title" content="WAVE">
-    <link rel="manifest" href="/manifest.json">
-    <script src="app.js"></script>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
 
-
-
-
     <!-- 暦の為の CSS & JS 読み込み -->
-    <!-- <link rel="stylesheet" href="calendar.css"> -->
-    <!-- <script type="module" defer src="calendar.js"></script> -->
-
-
+    <link rel="stylesheet" href="calendar.css">
+    <script type="module" defer src="calendar.js"></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
-    <form name="myform">
-      <!-- <input name="myfile" type="file"> -->
-      <input name="myfile" type="file" multiple>
-      <textarea name="output" cols="80" rows="10"></textarea>
-    </form>
-
-    <img id="img" src="" alt="">
-
-    <script defer>
-      let form = document.forms.myform
-      form.myfile.addEventListener('change', function(e) {
-        //読み込んだファイル情報を取得
-        let result = e.target.files[0]
-        //FileReaderのインスタンスを作成する
-        let reader = new FileReader()
-        // //読み込んだファイルの中身を取得する
-        // reader.readAsText(result)
-        // //ファイルの中身を取得後に処理を行う
-        // reader.addEventListener('load', function() {
-        //   //ファイルの中身をtextarea内に表示する
-        //   form.output.textContent = reader.result
-        // })
-        // 画像ファイルの中身を取得する
-        reader.readAsDataURL(result)
-        let img = document.getElementById("img")
-        reader.addEventListener('load', function() {
-         //imageタグのsrc属性に画像ファイルの中身を当てはめる
-         img.src = reader.result
-        })
-      })
-    </script>
-
     <!-- ヘッダー(サイト名) -->
     <header>
       <a href="index.html">WAVE</a>
     </header>
 
-
-
     <!-- ナビゲーションメニュー -->
     <nav>
       <ul>
-        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
-        <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
-        <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-        <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house fa-lg fa-fw"></i>
+            トップ
+          </a>
+        </li>
+        <li>
+          <a href="about.html">
+            <i class="fa-brands fa-pagelines fa-lg fa-fw"></i>
+            サイトについて
+          </a>
+        </li>
+        <li>
+          <a href="contact.html">
+            <i class="fa-solid fa-envelope fa-lg fa-fw"></i>
+            お問い合わせ
+          </a>
+        </li>
       </ul>
     </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- 投稿記事 -->
     <article>
-
-      <div id="content">contentdesu</div>
-      <script defer>
-        document.getElementById('content').innerHTML =
-          marked.parse('# Marked in the browser\n\nRendered by **marked**.');
-      </script>
-
-
       <h1>元旦</h1>
 
       <time datetime="2024-01-01">
@@ -158,6 +121,33 @@
     </div>
 
     <!-- フッター -->
-    <footer>© WAVE</footer>
+    <footer>
+      <!-- 連絡先 -->
+      <address>
+        <!-- 会社名 -->
+        <p class="company_name">(有) WAVE商会</p>
+        <!-- 住所 -->
+        <p class="address">名古屋市美波区美波町三丁目七番三号</p>
+        <!-- 電話番号 -->
+        <p class="tel">
+          <a href="tel:052-373-4649">
+            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
+            052-373-4649
+          </a>
+        </p>
+        <!-- メールアドレス -->
+        <p class="email">
+          <a href="mailto:contact@wave.example.jp">
+            <i class="fa-regular fa-envelope fa-lg"></i>
+            contact@wave.example.jp
+          </a>
+        </p>
+      </address>
+
+      <!-- 著作権表示 -->
+      <p class="copyright">
+        Copyright © 令和六年 WAVE All rights reserved.
+      </p>
+    </footer>
   </body>
 </html>

@@ -7,17 +7,6 @@ import HOLIDAYS from "./holidays.js"
 
 // ブログデータを取得
 import BLOGS from "./blogs.js"
-console.log(BLOGS)
-console.log(BLOGS["R06-01-01"])
-// console.log(BLOGS["R06-01-01"]["header"])
-// console.log(BLOGS["R06-01-01"].header)
-// console.log(BLOGS["R06-01-01"]["body"])
-// let body = BLOGS["R06-01-01"]["body"]
-// console.log(body)
-// console.log(body.trim())
-//
-
-
 
 // ブログに日付の記載があれば、それを、無ければ今日を、当日の日付とする
 // <time datetime="2024-04-01">四月一日</time>

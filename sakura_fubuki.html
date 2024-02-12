@@ -27,14 +27,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
 
-    <!-- PWA (Progressive Web Apps) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#477294">
-    <meta name="theme-color" content="#477294">
-    <meta name="apple-mobile-web-app-title" content="WAVE">
-    <link rel="manifest" href="/manifest.json">
-    <script src="app.js"></script>
-
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
 
@@ -54,9 +46,6 @@
     <!-- ナビゲーションメニュー -->
     <nav>
       <ul>
-        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
         <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
         <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
@@ -77,7 +66,7 @@
     </h1>
 
     <!-- サブタイトル -->
-    <p>
+    <p class="sub_title">
       <img src="images/circle.svg" alt=""><br>
       <a href="https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B0%BE%E8%8A%AD%E8%95%89">松尾芭蕉</a>
     </p>
@@ -146,6 +135,7 @@
       section h2::before, section h3::before { content: "🌸 "; }
       section h2::after,  section h3::after  { content: " 🌸"; }
       cite { display: block; text-align: right; font-size: 12px; }
+      footer { background: var(--sakurairo); }
     </style>
 
     <!-- フッター -->
