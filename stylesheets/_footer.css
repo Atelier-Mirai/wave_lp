@@ -44,10 +44,11 @@ footer {
     .company_name {
       color: var(--utsushiiro);
       font-size: var(--font-size-base);
+      font-weight: bold;
     }
 
     .address {
-      color: var(--sakurairo);
+      color: var(--botaniro);
       text-shadow: 1px 1px 1px var(--kurohairo);
       font-size: var(--font-size-base);
     }
