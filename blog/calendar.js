@@ -6,18 +6,9 @@
 import HOLIDAYS from "./holidays.js"
 
 // ブログデータを取得
-import BLOGS from "./blogs.js"
+import BLOG_DATA from "./blog_data.js"
 
-// ブログに日付の記載があれば、それを、無ければ今日を、当日の日付とする
-// <time datetime="2024-04-01">四月一日</time>
-let today = document.querySelector("time")
-let t
-if (today && (t = today.getAttribute("datetime"))) {
-  let s = Date.parse(t)
-  today = new Date(s)
-} else {
-  today = new Date()
-}
+let today = new Date()
 // 年と月も設定
 let currentYear  = today.getFullYear()
 let currentMonth = today.getMonth() + 1
@@ -32,10 +23,8 @@ const NAME_OF_DAY = ["sunday", "monday", "tuesday", "wednesday", "thursday", "fr
 const NUM_TO_KAN  = ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"]
 
 // <title>タグに<h1>タグの文字を設定する
-const h1 = document.querySelector("h1")
-const h1Text = h1.innerText
-const title = document.querySelector("title")
-title.innerHTML = `${h1Text} - WAVE`
+const h1        = document.querySelector("h1")
+document.title = `${h1.textContent} - WAVE`
 
 // 暦の背景写真と暦本体の為の要素定義 & 生成
 const wallpaper = document.getElementById("wallpaper")
@@ -98,14 +87,6 @@ const blogHeader = document.createElement("p")
 blogHeader.className = "blog header"
 blogHeader.innerHTML = "今月の投稿"
 calendar.appendChild(blogHeader)
-const nav = document.createElement("nav")
-let ul = document.createElement("ul")
-ul.id = "ul"
-nav.appendChild(ul)
-calendar.appendChild(nav)
-nav.appendChild(ul)
-
-
 
 // 当月の暦生成&表示
 showCalendar(currentYear, currentMonth)
@@ -140,8 +121,6 @@ function nextMonth() {
 
 // 当月の暦生成&表示
 function showCalendar(year, month) {
-  let firstDay = zeller(year, month, 1)
-
   // 以前の暦を削除 ＆ 今月の暦新規作成
   let tbody     = document.getElementById("tbody")
   if (tbody !== null) { tbody.remove() }
@@ -149,10 +128,18 @@ function showCalendar(year, month) {
   tbody.id  = "tbody"
 
   // 以前のブログ一覧を削除 ＆ 今月のブログ一覧新規作成
-  // ul     = document.getElementById("ul")
-  // if (ul !== null) { ul.remove() }
-  // ul     = document.createElement("ul")
-  // ul.id  = "ul"
+  let nav     = document.getElementById("nav")
+  if (nav !== null) { nav.remove() }
+  nav = document.createElement("nav")
+  nav.id = "nav"
+  let ul = document.createElement("ul")
+  ul.id = "ul"
+  nav.appendChild(ul)
+  calendar.appendChild(nav)
+  nav.appendChild(ul)
+
+  // 今月最初の日
+  let firstDay = zeller(year, month, 1)
 
   // 月初の空日処理
   let wday = 0
@@ -174,37 +161,41 @@ function showCalendar(year, month) {
 
     // 今日なら today クラス付与
     if (date === thisDay && currentMonth === thisMonth && currentYear === thisYear) {
-      td.className = "today"
+      td.className = `${td.className} today`
     }
 
     // 祝日なら holiday クラス付与 & title属性付与
     let name
     if (name = holidayName(currentYear, currentMonth, date)) {
-      td.className = "holiday"
+      td.className = `${td.className} holiday`
       td.setAttribute("title", name)
     }
 
-    // ブログ執筆日なら blogday クラス付与 & title属性付与
-    let blog_no_title
-    if (blog_no_title = blogTitle(currentYear, currentMonth, date)) {
+    // ブログ執筆日なら blogday クラス付与 & data-title属性等を付与
+    let blogData
+    let reiwaDate = stringifyDate(currentYear, currentMonth, date)
+    if (blogData = currentBlogData(reiwaDate)) {
       // blog クラス付与
       td.className = `${td.className} blogday`
 
       // title 属性 追記
       if (td.getAttribute("title")) {
-        td.setAttribute("title", `${td.getAttribute("title")} ${blog_no_title}`)
+        td.setAttribute("title", `${td.getAttribute("title")} ${blogData.title}`)
       } else {
-        td.setAttribute("title", blog_no_title)
+        td.setAttribute("title", blogData.title)
       }
-      // リンク属性設定
-      let link = `${stringifyDate(currentYear, currentMonth, date)}.html`
-      a.setAttribute("href", link)
+
+      td.dataset.date      = reiwaDate
+      td.dataset.hiduke    = blogData.hiduke
+      td.dataset.image     = blogData.image
+      td.dataset.paragraph = blogData.paragraph.replaceAll("\n", "<br>")
 
       // ブログ一覧へのリンク生成
       let li = document.createElement("li")
       let blog_a  = document.createElement("a")
-      blog_a.setAttribute("href", link)
-      blog_a.innerHTML = blog_no_title
+      // blog_a.setAttribute("href", link)
+      blog_a.innerHTML = blogData.title
+      blog_a.dataset.date = reiwaDate
       li.appendChild(blog_a)
       ul.appendChild(li)
     }
@@ -223,6 +214,54 @@ function showCalendar(year, month) {
   }
   tbody.appendChild(tr)
   table.appendChild(tbody)
+
+  // tdにセットしたデータ属性に基づき、内容が変わるよう、
+  // イベントリスナ 設定
+  table.querySelectorAll(".blogday").forEach((td) => {
+    td.querySelector("a").addEventListener("click", () => {
+      document.getElementById("title").textContent  = td.title
+      document.getElementById("hiduke").textContent = td.dataset.hiduke
+      if (td.dataset.image === "") {
+        document.getElementById("image").style.display = "none"
+      } else {
+        document.getElementById("image").style.display = "block"
+        document.getElementById("image").querySelector("img").src = `images/${td.dataset.image}`
+      }
+      document.getElementById("paragraph").innerHTML = td.dataset.paragraph
+    })
+  })
+
+  // その月の最初のブログを表示する
+  let td = table.querySelector(".blogday")
+  if (td) {
+    document.getElementById("title").textContent  = td.title
+    document.getElementById("hiduke").textContent = td.dataset.hiduke
+    if (td.dataset.image === "") {
+      document.getElementById("image").style.display = "none"
+    } else {
+      document.getElementById("image").style.display = "block"
+      document.getElementById("image").querySelector("img").src = `images/${td.dataset.image}`
+    }
+    document.getElementById("paragraph").innerHTML = td.dataset.paragraph
+  }
+
+  // 今月の投稿欄の見出しをクリックした際、そのブログになるよう、
+  // イベントリスナ 設定
+  document.querySelectorAll("#nav #ul li a").forEach((a) => {
+    a.addEventListener("click", () => {
+      let date = a.dataset.date
+      let td = document.querySelector(`[data-date="${date}"]`)
+      document.getElementById("title").textContent  = td.title
+      document.getElementById("hiduke").textContent = td.dataset.hiduke
+      if (td.dataset.image === "") {
+        document.getElementById("image").style.display = "none"
+      } else {
+        document.getElementById("image").style.display = "block"
+        document.getElementById("image").querySelector("img").src = `images/${td.dataset.image}`
+      }
+      document.getElementById("paragraph").innerHTML = td.dataset.paragraph
+    })
+  });
 }
 
 // その月の日数を返す
@@ -285,6 +324,6 @@ function stringifyDate(year, month, day) {
 }
 
 // ブログ表題を返す
-function blogTitle(year, month, day) {
-  return  BLOGS[stringifyDate(year, month, day)]
+function currentBlogData(reiwaDate) {
+  return  BLOG_DATA[reiwaDate]
 }

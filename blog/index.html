@@ -13,10 +13,10 @@
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
     <link rel="icon"
-          href="images/favicon.ico"
+          href="../images/favicon.ico"
           type="image/ico">
     <link rel="apple-touch-icon"
-          href="images/apple-touch-icon-180x180.png"
+          href="../images/apple-touch-icon-180x180.png"
           type="image/png"
           sizes="180x180">
 
@@ -35,7 +35,7 @@
           href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="stylesheets/master.css">
+    <link rel="stylesheet" href="../stylesheets/master.css">
 
     <!-- 暦の為の CSS & JS 読み込み -->
     <link rel="stylesheet" href="calendar.css">
@@ -46,7 +46,7 @@
   <body class="post">
     <!-- ヘッダー(サイト名) -->
     <header>
-      <a href="index.html">WAVE</a>
+      <a href="../index.html">WAVE</a>
     </header>
 
     <!-- ナビゲーションメニュー -->
@@ -75,25 +75,20 @@
 
     <!-- 投稿記事 -->
     <article>
-      <h1>元旦</h1>
+      <h1 id="title">元旦</h1>
 
-      <time datetime="2024-01-01">
+      <time>
         <i class="fa-regular fa-clock fa-lg fa-fw"></i>
-        一月一日
+        <span id="hiduke">一月一日</span>
       </time>
 
-      <figure class="rotate-3 frame">
-        <img src="images/sakura/aozora_to_sakura.webp"
-             alt="青空と櫻">
+      <figure class="rotate-3 frame" id="image">
+        <img src="images/aozora_to_sakura.webp" alt="青空と櫻">
       </figure>
 
-      <p>
-        令和六年元旦。新しい年の始まりです。
-      </p>
-      <p>
-        初日の出を拝み、良い年であるようにと祈ります。
-      </p>
-      <p>
+      <p id="paragraph">
+        令和六年元旦。新しい年の始まりです。<br>
+        初日の出を拝み、良い年であるようにと祈ります。<br>
         お節料理にお屠蘇、お雑煮をいただきます。
       </p>
     </article>
@@ -104,7 +99,7 @@
       <aside class="profile">
         <h2>PROFILE</h2>
         <figure>
-          <img src="images/profile.webp" alt="WAVEの管理人" class="circular">
+          <img src="../images/profile.webp" alt="WAVEの管理人" class="circular">
         </figure>
         <p>
           部屋の掃除は好きだけれど、お皿洗いは苦手。毎日そこら辺をお散歩しています。
