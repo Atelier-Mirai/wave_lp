@@ -93,7 +93,7 @@ function updateRecord() {
   connection.$sql.run(query).then(function (rowAffected) {
     alert(`${rowAffected} 件、更新しました。`)
     if (rowAffected > 0) {
-      window.location.href = "index.html"
+      window.location.href = "editor.html"
     }
   }).catch(function (err) {
     console.log(err)
@@ -119,7 +119,7 @@ function insertRecord() {
 
   connection.$sql.run(query).then(function (rowInserted) {
     alert(`${rowInserted} 件、追加しました。`)
-    window.location.href = "index.html"
+    window.location.href = "editor.html"
   }).catch(function (err) {
     console.log(err)
     alert(err.message)
