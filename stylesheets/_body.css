@@ -32,6 +32,8 @@ body {
               [title]  auto
               [sub]    auto
               [recent] auto
+              [about]  auto
+              [contact] auto
               [foot]   auto;
   row-gap: 20px;
   font-family: "Helvetica Neue",
@@ -60,6 +62,16 @@ body > * {
     grid-template-rows: [head]      100px
                         [title sub] auto
                         [recent]    auto
+                        [about]  auto
+                        [contact] auto
                         [foot]      auto;
   }
+}
+
+.about {
+  grid-row: about;
+}
+
+.contact {
+  grid-row: contact;
 }
